@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = Post.all
+    @comment = Comment.new
   end
 
   def create
@@ -15,6 +16,13 @@ class PostsController < ApplicationController
     else
       render 'index'
     end
+  end
+
+  def likes
+    @post = Post.find_by_id(params[:post_id])
+    @post.update(likes_count: @post.likes_count + 1)
+    Like.create(user_id: current_user.id, post_id: params[:post_id])
+    redirect_to root_path
   end
 
   private

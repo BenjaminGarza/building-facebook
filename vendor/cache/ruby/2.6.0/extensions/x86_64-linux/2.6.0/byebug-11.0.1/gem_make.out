@@ -1,0 +1,19 @@
+current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
+/home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191101-8481-1pzvn14.rb extconf.rb
+creating Makefile
+
+current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -m 0755 byebug.so ./.gem.20191101-8481-1aehv8p/byebug

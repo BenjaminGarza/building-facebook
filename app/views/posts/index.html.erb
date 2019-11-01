@@ -5,14 +5,28 @@
 <%= form_for(@post) do |f|%>
   <%= f.text_area :content %>
   <%= f.submit "Post"%>
+<% end %>
+
+<% @posts.each do |post|%>
+  <br>
+  <%= "#{post.user.name}: " %>
+  <%= post.content %>
+  <div>
+    <%= link_to "Likes:", likes_path(post.id) %>
+    <%= post.likes_count %>
+  </div>
+  <% post.comments.each do |comment| %>
+    <div class="comments">
+      <%= comment.content %>
+    </div>
   <% end %>
+  <br>
+  <%= form_for(@comment) do |f| %>
+    <%= f.text_area :content %>
+    <%= f.hidden_field :post_id, value: post.id %>
+    <%= f.submit "Comment" %>
+  <% end %>
+<% end %>
 
-  <% @posts.each do |post|%>
-    <br>
-    <%= "#{post.user.name}: " %>
-    <%= post.content %>
-    <br> 
-    <% end %>
-
-    <%= link_to "Sign out",  destroy_user_session_path, method: :delete %>
-    <%= link_to "Edit profile", edit_user_registration_path %>
+<%= link_to "Sign out",  destroy_user_session_path, method: :delete %>
+<%= link_to "Edit profile", edit_user_registration_path %>

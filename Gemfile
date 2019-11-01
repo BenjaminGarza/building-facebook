@@ -19,6 +19,7 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+# authentication with devise
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'omniauth', '~> 1.9'
 # Use Redis adapter to run Action Cable in production
@@ -27,8 +28,6 @@ gem 'omniauth', '~> 1.9'
 # gem 'bcrypt', '~> 3.1.7'
 # Linter fixes with rubocop
 gem 'rubocop', '~> 0.76.0'
-# authentication with devise
-gem 'devise'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
