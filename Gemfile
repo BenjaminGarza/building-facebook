@@ -27,6 +27,8 @@ gem 'omniauth', '~> 1.9'
 # gem 'bcrypt', '~> 3.1.7'
 # Linter fixes with rubocop
 gem 'rubocop', '~> 0.76.0'
+# authentication with devise
+gem 'devise'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
