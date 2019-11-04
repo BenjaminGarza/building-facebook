@@ -21,9 +21,9 @@ class PostsController < ApplicationController
   end
 
   def likes
-    @like = Like.where("user_id = ? and post_id = ?", current_user.id, params[:post_id]).first
+    @like = Like.where('user_id = ? and post_id = ?', current_user.id, params[:post_id]).first
     @post = Post.find_by_id(params[:post_id])
-    if @like.nil? 
+    if @like.nil?
       @post.update(likes_count: @post.likes_count + 1)
       Like.create(user_id: current_user.id, post_id: params[:post_id])
     else
