@@ -40,7 +40,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
+  gem 'factory_bot', '~> 4.8', '>= 4.8.2'
   gem 'rspec-rails', '~> 3.5'
 end
 

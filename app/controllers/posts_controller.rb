@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    @posts = Post.all
+    @posts = Post.all.order(:created_at)
     @comment = Comment.new
   end
 
@@ -14,14 +14,22 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
+      @posts = Post.all.order(:created_at)
+      @comment = Comment.new
       render 'index'
     end
   end
 
   def likes
+    @like = Like.where("user_id = ? and post_id = ?", current_user.id, params[:post_id]).first
     @post = Post.find_by_id(params[:post_id])
-    @post.update(likes_count: @post.likes_count + 1)
-    Like.create(user_id: current_user.id, post_id: params[:post_id])
+    if @like.nil? 
+      @post.update(likes_count: @post.likes_count + 1)
+      Like.create(user_id: current_user.id, post_id: params[:post_id])
+    else
+      @post.update(likes_count: @post.likes_count - 1)
+      @like.destroy
+    end
     redirect_to root_path
   end
 

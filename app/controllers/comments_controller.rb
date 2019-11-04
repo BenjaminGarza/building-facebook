@@ -3,7 +3,10 @@
 class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
-    flash[:warning] = @comment.errors.full_messages unless @comment.save
+    
+    unless @comment.save
+      flash[:comment_errors] = [@comment.errors.full_messages, @comment.post_id]
+    end
     redirect_to posts_path
   end
 
