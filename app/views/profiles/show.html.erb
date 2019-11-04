@@ -1,0 +1,7 @@
+<h1> <%= @user.name %> </h1>
+
+ <h1> Friend requests </h1>
+ <% @requests.each do |request| %>
+  <%= request.name %>
+  <% end %>
+<%= link_to "Add as friend", add_path(@user.id) %>

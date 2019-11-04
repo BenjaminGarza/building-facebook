@@ -10,7 +10,12 @@ Rails.application.routes.draw do
 
   get 'likes/:post_id', to: "posts#likes", as: 'likes'
 
+  get 'profiles/:id', to: 'profiles#show', as: 'profiles'
+
+  get 'add/:friend_id', to: "profiles#add", as: 'add'
+
   resources :posts
   resources :comments
   resources :likes
+  resources :friends
 end
