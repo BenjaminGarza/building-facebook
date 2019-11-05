@@ -9,7 +9,7 @@ RSpec.describe 'friend_request', type: :feature do
     @post = @user2.posts.build(content: 'Hello World!')
     @post.save
   end
-  
+
   scenario 'should send friend request, cancel friend request, accept, and remove friend' do
     visit root_path
     fill_in('user_email', with: 'tom@gmail.com')
