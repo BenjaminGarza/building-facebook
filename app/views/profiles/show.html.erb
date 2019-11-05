@@ -1,17 +1,34 @@
 <h1> <%= @user.name %> </h1>
 
+<%= link_to "Home", root_path %>
+
+<%= link_to "Sign out",  destroy_user_session_path, method: :delete %>
+
 <% if current_user.id == @user.id %>
   <h1> Friend requests </h1>
   <%= flash[:warning] %>
   <% @requests.each do |request| %>
     <%= request.name %>
     <%= link_to "Accept friend", accept_path(request.id) %>
-    <%= link_to "Ignore friend", cancel_path(request.id) %>
+    <%= link_to "Ignore friend", ignore_path(request.id) %>
+    <br> <br>
   <% end %>
 <% elsif @sender.nil? && @receiver.nil? %>
   <%= link_to "Add as friend", add_path(@user.id) %>
 <% elsif !@sender.nil? && !@sender.confirmed && current_user.id = @sender.id %>
     <%= link_to "Cancel request", cancel_path(@user.id) %>
 <% elsif @receiver.nil? && @sender.confirmed || @receiver.confirmed %>
-  <%= link_to "Remove friend", cancel_path(@user.id) %>
+  <%= link_to "Remove friend", remove_path(@user.id) %>
+<% elsif !@receiver.nil? %>
+<%= link_to "Accept friend", accept_path(@user.id) %>
+<%= link_to "Ignore friend", ignore_path(@user.id) %>
+<% end %>
+
+<h1> Friend list </h1>
+<% @friends.each do |friend| %>
+  <%= link_to "#{friend.name}", profiles_path(friend.id) %>
+  <% if current_user.id == @user.id %>
+  <%= link_to "Remove friend", ignore_path(friend.id) %>
+  <% end %>
+  <br> <br>
 <% end %>

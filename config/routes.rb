@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'add/:friend_id', to: "profiles#add", as: 'add'
 
   get 'cancel/:friend_id', to: "friends#cancel", as: 'cancel'
+  get 'ignore/:friend_id', to: "friends#ignore", as: 'ignore'
+  get 'remove/:friend_id', to: "friends#remove", as: 'remove'
   get 'accept/:friend_id', to: "friends#accept", as: 'accept'
 
   resources :posts
