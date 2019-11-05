@@ -1,7 +1,17 @@
 <h1> <%= @user.name %> </h1>
 
- <h1> Friend requests </h1>
- <% @requests.each do |request| %>
-  <%= request.name %>
+<% if current_user.id == @user.id %>
+  <h1> Friend requests </h1>
+  <%= flash[:warning] %>
+  <% @requests.each do |request| %>
+    <%= request.name %>
+    <%= link_to "Accept friend", accept_path(request.id) %>
+    <%= link_to "Ignore friend", cancel_path(request.id) %>
   <% end %>
-<%= link_to "Add as friend", add_path(@user.id) %>
+<% elsif @sender.nil? && @receiver.nil? %>
+  <%= link_to "Add as friend", add_path(@user.id) %>
+<% elsif !@sender.nil? && !@sender.confirmed && current_user.id = @sender.id %>
+    <%= link_to "Cancel request", cancel_path(@user.id) %>
+<% elsif @receiver.nil? && @sender.confirmed || @receiver.confirmed %>
+  <%= link_to "Remove friend", cancel_path(@user.id) %>
+<% end %>

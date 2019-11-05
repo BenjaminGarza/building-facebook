@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   get 'likes/:post_id', to: "posts#likes", as: 'likes'
 
   get 'profiles/:id', to: 'profiles#show', as: 'profiles'
-
   get 'add/:friend_id', to: "profiles#add", as: 'add'
+
+  get 'cancel/:friend_id', to: "friends#cancel", as: 'cancel'
+  get 'accept/:friend_id', to: "friends#accept", as: 'accept'
 
   resources :posts
   resources :comments
