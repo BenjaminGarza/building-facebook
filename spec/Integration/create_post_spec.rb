@@ -23,4 +23,14 @@ RSpec.describe 'signin', type: :feature do
     click_button('commit')
     expect(page).to have_content('Hello world!')
   end
+
+  scenario 'should not create post' do
+    visit root_path
+    fill_in('user_email', with: 'tom@gmail.com')
+    fill_in('user_password', with: '123456')
+    click_button('commit')
+    expect(page).to have_content('Signed in successfully')
+    click_button('commit')
+    expect(page).to have_content("Content can't be blank")
+  end
 end
