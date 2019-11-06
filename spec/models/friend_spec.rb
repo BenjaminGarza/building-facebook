@@ -22,4 +22,15 @@ RSpec.describe Friend, type: :model do
   it 'is invalid without receiver id' do
     expect(@friend3).to_not be_valid
   end
+
+  it 'relation should be unique' do
+    @friend.save
+    @friend2 = Friend.new(sender_id: @user2.id, receiver_id: @user.id)
+    expect(@friend2).to_not be_valid
+  end
+
+  it 'should not friend self' do
+    @friend2 = Friend.new(sender_id: @user.id, receiver_id: @user.id)
+    expect(@friend2).to_not be_valid
+  end
 end

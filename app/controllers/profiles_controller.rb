@@ -23,10 +23,4 @@ class ProfilesController < ApplicationController
     end
     ids
   end
-
-  def add
-    @friend = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, params[:friend_id]).first
-    Friend.create(sender_id: current_user.id, receiver_id: params[:friend_id], confirmed: false) if @friend.nil?
-    redirect_to profiles_path(params[:friend_id])
-  end
 end
