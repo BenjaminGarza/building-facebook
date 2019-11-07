@@ -4,8 +4,8 @@ require 'spec_helper'
 
 RSpec.describe 'signin', type: :feature do
   before :each do
-    Rails.application.env_config["devise.mapping"] = Devise.mappings[:user] # If using Devise
-    Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook]
+    Rails.application.env_config['devise.mapping'] = Devise.mappings[:user] # If using Devise
+    Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:facebook]
   end
 
   scenario 'should be a valid signin' do
