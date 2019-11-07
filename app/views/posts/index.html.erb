@@ -16,7 +16,7 @@
 
 <% @posts.each do |post|%>
   <br>
-  <%= "#{post.user.name}: " %>
+  <%= link_to "#{post.user.name}:", profiles_path(post.user.id) %>
   <%= post.content %>
   <div>
     <%= link_to "Likes:", likes_path(post.id) %>
@@ -47,3 +47,4 @@
 
 <%= link_to "Sign out",  destroy_user_session_path, method: :delete %>
 <%= link_to "Edit profile", edit_user_registration_path %>
+<%= link_to "View Profile", profiles_path(current_user.id) %>

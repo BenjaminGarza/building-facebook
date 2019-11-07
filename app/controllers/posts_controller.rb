@@ -5,8 +5,24 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    @posts = Post.all.order(:created_at)
+
+    @friends_id = Friend.select(:sender_id).where('(receiver_id = ?) AND confirmed = true', current_user.id)
+    @friends_id2 = Friend.select(:receiver_id).where('(sender_id = ?) AND confirmed = true', current_user.id)
+    @ids = set_ids(@friends_id, @friends_id2)
+
+    @posts = Post.where('user_id IN(?) OR user_id = ?', @ids, current_user.id).order(:created_at)
     @comment = Comment.new
+  end
+
+  def set_ids(friends_id, friends_id2)
+    ids = []
+    friends_id.each do |key|
+      ids << key[:sender_id]
+    end
+    friends_id2.each do |key|
+      ids << key[:receiver_id]
+    end
+    ids
   end
 
   def create

@@ -19,5 +19,7 @@ RSpec.describe 'likepost', type: :feature do
     expect(page).to have_content('Likes: 0')
     click_link('Likes:')
     expect(page).to have_content('Likes: 1')
+    click_link('Likes:')
+    expect(page).to have_content('Likes: 0')
   end
 end
