@@ -8,7 +8,6 @@ RSpec.describe 'friend_request', type: :feature do
     @user2 = User.create(name: 'ben', email: 'ben@gmail.com', password: '123456', password_confirmation: '123456')
     @post = @user2.posts.build(content: 'Hello World!')
     @post.save
-    #@friend = Friend.create(sender_id: @user.id, receiver_id: @user2.id, confirmed: true)
   end
 
   scenario 'should send friend request, cancel friend request, accept, and remove friend' do
