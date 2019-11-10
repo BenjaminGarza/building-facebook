@@ -1,18 +1,20 @@
 <main>
+<article>
   <aside>
-    <h1> <%= @user.name.capitalize %> </h1>
+    <h2> <%= @user.name.capitalize %> </h2>
     <br>
 
 
     <% if current_user.id == @user.id %>
     
-      <h1> Friend requests </h1>
+      <h2> Friend requests </h2>
       <%= flash[:warning] %>
       <% @requests.each do |request| %>
         <%= request.name %>
         <%= link_to "Accept friend", accept_path(request.id) %>
         <%= link_to "Ignore friend", ignore_path(request.id) %>
         <br> <br>
+      <% end %>
       <% end %>
     <% elsif @sender.nil? && @receiver.nil? %>
       <%= link_to "Add as friend", add_path(@user.id) %>
@@ -25,7 +27,7 @@
     <%= link_to "Ignore friend", ignore_path(@user.id) %>
     <% end %>
     <br> <br> <br>
-    <h1> Friends list </h1>
+    <h2> Friends list </h2>
     <br>
     <% @friends.each do |friend| %>
       <%= link_to "#{friend.name}", profiles_path(friend.id) %>
@@ -35,8 +37,10 @@
       <br> <br>
     <% end %>
   </aside>
-  <body>
-    <div>
+    <section>
+    <%# add @post.errors.any? method and form_for @posts%>
+
+    <h2>Posts</h2>
       <% @posts.each do |post|%>
         <br>
         <%= link_to "#{post.user.name}:", profiles_path(post.user.id) %>
@@ -67,6 +71,6 @@
           <%= f.submit "Comment" %>
         <% end %>
       <% end %>
-    <div>
-  </body
+    <section>
+  </article>
 <main>

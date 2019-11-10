@@ -4,17 +4,20 @@
 h1{
   font-size: 200%;
 }
+h2{
+  font-size: 150%;
+}
 main{
-  display: flex;
-  aside{
+  article{
     padding: 6%;
-    
-  }
-  body{
-    padding: 6%;
-    justify-content: center;
-
-     div{
+    display: flex;
+    aside{
+      padding: 6%;
+      flex: 33%;
+      justify-content: center;
+    }
+     section{
+       justify-content: center;
        flex-direction: column;
      }
   }
