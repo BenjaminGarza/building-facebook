@@ -1,35 +1,72 @@
-<aside>
-  <h1> <%= @user.name %> </h1>
-  <br>
+<main>
+  <aside>
+    <h1> <%= @user.name.capitalize %> </h1>
+    <br>
 
 
-  <% if current_user.id == @user.id %>
-    <h1> Friend requests </h1>
-    <%= flash[:warning] %>
-    <% @requests.each do |request| %>
-      <%= request.name %>
-      <%= link_to "Accept friend", accept_path(request.id) %>
-      <%= link_to "Ignore friend", ignore_path(request.id) %>
+    <% if current_user.id == @user.id %>
+    
+      <h1> Friend requests </h1>
+      <%= flash[:warning] %>
+      <% @requests.each do |request| %>
+        <%= request.name %>
+        <%= link_to "Accept friend", accept_path(request.id) %>
+        <%= link_to "Ignore friend", ignore_path(request.id) %>
+        <br> <br>
+      <% end %>
+    <% elsif @sender.nil? && @receiver.nil? %>
+      <%= link_to "Add as friend", add_path(@user.id) %>
+    <% elsif !@sender.nil? && !@sender.confirmed && current_user.id = @sender.id %>
+      <%= link_to "Cancel request", cancel_path(@user.id) %>
+    <% elsif @receiver.nil? && @sender.confirmed || @receiver.confirmed %>
+      <%= link_to "Remove as friend", remove_path(@user.id) %>
+    <% elsif !@receiver.nil? %>
+    <%= link_to "Accept friend", accept_path(@user.id) %>
+    <%= link_to "Ignore friend", ignore_path(@user.id) %>
+    <% end %>
+    <br> <br> <br>
+    <h1> Friends list </h1>
+    <br>
+    <% @friends.each do |friend| %>
+      <%= link_to "#{friend.name}", profiles_path(friend.id) %>
+      <% if current_user.id == @user.id %>
+      <%= link_to "Remove friend", ignore_path(friend.id) %>
+      <% end %>
       <br> <br>
     <% end %>
-  <% elsif @sender.nil? && @receiver.nil? %>
-    <%= link_to "Add as friend", add_path(@user.id) %>
-  <% elsif !@sender.nil? && !@sender.confirmed && current_user.id = @sender.id %>
-    <%= link_to "Cancel request", cancel_path(@user.id) %>
-  <% elsif @receiver.nil? && @sender.confirmed || @receiver.confirmed %>
-    <%= link_to "Remove as friend", remove_path(@user.id) %>
-  <% elsif !@receiver.nil? %>
-  <%= link_to "Accept friend", accept_path(@user.id) %>
-  <%= link_to "Ignore friend", ignore_path(@user.id) %>
-  <% end %>
-  <br> <br> <br>
-  <h1> Friends list </h1>
-  <br>
-  <% @friends.each do |friend| %>
-    <%= link_to "#{friend.name}", profiles_path(friend.id) %>
-    <% if current_user.id == @user.id %>
-    <%= link_to "Remove friend", ignore_path(friend.id) %>
-    <% end %>
-    <br> <br>
-  <% end %>
-</aside>
+  </aside>
+  <body>
+    <div>
+      <% @posts.each do |post|%>
+        <br>
+        <%= link_to "#{post.user.name}:", profiles_path(post.user.id) %>
+        <%= post.content %>
+        <div>
+          <%= link_to "Likes:", likes_path(post.id) %>
+          <%= post.likes_count %>
+        </div>
+        <% if flash.any? %>
+            <ul>
+              <% flash.each do |type,obj| %>
+                <% if type == "comment_errors" && post.id == obj[1]%>
+                <li><%= obj[0][0] %></li>
+                <% end %>
+              <% end %>
+            </ul>
+          <% end %>
+        <% post.comments.each do |comment| %>
+        
+          <div class="comments">
+            <%= comment.content %>
+          </div>
+        <% end %>
+        <br>
+        <%= form_for(@comment) do |f| %>
+          <%= f.text_area :content %>
+          <%= f.hidden_field :post_id, value: post.id %>
+          <%= f.submit "Comment" %>
+        <% end %>
+      <% end %>
+    <div>
+  </body
+<main>
