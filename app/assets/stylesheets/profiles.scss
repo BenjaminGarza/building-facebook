@@ -43,3 +43,15 @@ body{
 .comments{
   width: 93.5%;
 }
+.name-gravitar{
+  display: flex;
+  height: 120px;
+  div{
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    h1{
+      padding: 25%;
+    }
+  }
+}
