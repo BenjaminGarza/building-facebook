@@ -1,4 +1,4 @@
-<%= render 'shared/header' unless current_user.nil?%> 
+<%= render 'shared/header' unless current_user.nil?%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,7 +12,26 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    
+
     <%= yield %>
   </body>
 </html>
+
+<script type="text/javascript">
+  var a = document.getElementById("changeIcon");
+  var nav = document.getElementById("nav-menu-show");
+  var img_menu = document.getElementById("img_menu");
+  change = 1;
+
+  a.onclick = function() {
+    if(change == 2){
+      nav.style.display = 'none';
+      img_menu.src = "/assets/bars.svg";
+      change = 1;
+    }else{
+      nav.style.display = 'block';
+      img_menu.src = "/assets/cross.svg";
+      change = 2;
+    }
+  }
+</script>
