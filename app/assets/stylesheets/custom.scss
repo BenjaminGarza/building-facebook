@@ -42,19 +42,3 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/*header*/
-header{
-  width: 100%;
-  
-  nav{
-    ul{
-      display: flex;
-      li{
-        justify-content: space-evenly;
-        flex: 1;
-        text-align: center;
-        padding: 20px;
-      }
-    }
-  }
-}

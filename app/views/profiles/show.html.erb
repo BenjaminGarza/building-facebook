@@ -1,4 +1,4 @@
-<main>
+<body>
   <aside>
     <h1> <%= @user.name.capitalize %> </h1>
     <br>
@@ -35,38 +35,41 @@
       <br> <br>
     <% end %>
   </aside>
-  <body>
+  <main>
     <div>
       <% @posts.each do |post|%>
         <br>
-        <%= link_to "#{post.user.name}:", profiles_path(post.user.id) %>
-        <%= post.content %>
-        <div>
-          <%= link_to "Likes:", likes_path(post.id) %>
-          <%= post.likes_count %>
-        </div>
-        <% if flash.any? %>
-            <ul>
-              <% flash.each do |type,obj| %>
-                <% if type == "comment_errors" && post.id == obj[1]%>
-                <li><%= obj[0][0] %></li>
-                <% end %>
-              <% end %>
-            </ul>
-          <% end %>
-        <% post.comments.each do |comment| %>
-        
-          <div class="comments">
-            <%= comment.content %>
+        <article>
+          <%= link_to "#{post.user.name}", profiles_path(post.user.id) %>
+          <br> <br>
+          <%= post.content %>
+          <div>
+            <%= link_to "Likes:", likes_path(post.id) %>
+            <%= post.likes_count %>
           </div>
-        <% end %>
-        <br>
-        <%= form_for(@comment) do |f| %>
-          <%= f.text_area :content %>
-          <%= f.hidden_field :post_id, value: post.id %>
-          <%= f.submit "Comment" %>
-        <% end %>
+          <% if flash.any? %>
+              <ul>
+                <% flash.each do |type,obj| %>
+                  <% if type == "comment_errors" && post.id == obj[1]%>
+                  <li><%= obj[0][0] %></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            <% end %>
+          <% post.comments.each do |comment| %>
+          
+            <div class="comments">
+              <%= comment.content %>
+            </div>
+          <% end %>
+          <br>
+          <%= form_for(@comment) do |f| %>
+            <%= f.text_area :content %>
+            <%= f.hidden_field :post_id, value: post.id %>
+            <%= f.submit "Comment" %>
+          <% end %>
+        </article>
       <% end %>
     <div>
-  </body
-<main>
+  </main>
+<body>
