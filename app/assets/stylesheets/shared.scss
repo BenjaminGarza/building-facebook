@@ -1,16 +1,25 @@
 /*header*/
-header{
+header {
   width: 100%;
   position: fixed;
-  background: lightskyblue;
+  background: linear-gradient(to bottom, #4397f0, #234f7d);
+  box-shadow: 0px 1px 5px #0d3e70;
   nav{
-    ul{
+    ul {
       display: flex;
-      li{
+      a {
         justify-content: space-evenly;
         flex: 1;
         text-align: center;
         padding: 8px;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bolder;
+        &:hover{
+          background: linear-gradient(to bottom, #234f7d, #4397f0);
+          color: skyblue;
+        }
       }
     }
   }

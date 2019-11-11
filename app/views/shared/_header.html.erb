@@ -1,10 +1,10 @@
-<header> 
+<header>
   <nav>
     <ul>
-      <li> <%= link_to "Home", root_path %></li>
-      <li> <%= link_to current_user.name.capitalize, profiles_path(current_user.id) %> </li>
-      <li> Notifications </li>
-      <li> <%= link_to "Sign out", destroy_user_session_path, method: :delete %> </li>
+      <%= link_to "<li>Home</li>".html_safe, root_path %>
+      <%= link_to "<li>#{current_user.name.capitalize}</li>".html_safe, profiles_path(current_user.id) %>
+      <%= link_to "<li>Notifications</li>".html_safe, "#" %>
+      <%= link_to "<li>Sign out</li>".html_safe, destroy_user_session_path, method: :delete %>
     <ul/>
   </nav>
 </header>
