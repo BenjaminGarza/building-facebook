@@ -46,13 +46,13 @@
       <% @posts.each do |post|%>
         <br>
         <article>
-          <%= link_to "#{post.user.name}", profiles_path(post.user.id) %>
-          <br> <br>
-          <%= post.content %>
-          <div>
-            <%= link_to "Likes:", likes_path(post.id) %>
-            <%= post.likes_count %>
-          </div>
+        <span><%= link_to "#{post.user.name.capitalize}", profiles_path(post.user.id), class: "link_profile"%>
+          <span class="time-post"><%= time_ago_in_words(post.created_at) %> ago.</span></span>
+      <p class="p-post"> <%= post.content %> </p>
+      <div>
+      <%= link_to image_tag("thumbs-up.svg", width: 20), likes_path(post.id) %>
+      <%= post.likes_count %>
+    </div>
           <% if flash.any? %>
               <ul>
                 <% flash.each do |type,obj| %>
@@ -65,14 +65,15 @@
           <% post.comments.each do |comment| %>
           
             <div class="comments">
-              <%= comment.content %>
-            </div>
+            <span><%= link_to comment.user.name, profiles_path(comment.user.id), class: "link_profile" %>
+              <%= comment.content %></span>
+          </div>
           <% end %>
           <br>
           <%= form_for(@comment) do |f| %>
-            <%= f.text_area :content %>
+            <%= f.text_area :content, class: "comment", placeholder: "Say something!" %>
             <%= f.hidden_field :post_id, value: post.id %>
-            <%= f.submit "Comment" %>
+            <%= f.submit "Comment", class: "comment-button" %>
           <% end %>
         </article>
       <% end %>

@@ -50,10 +50,11 @@ hr {
 }
 /* Post Style */
 #post-container {
-  max-width: 1000px;
+  width: 1000px;
   margin: 0 auto;
   padding: 10px;
 	background: white;
+}
 
 	.error-content {
 		max-width: 990px;
@@ -77,7 +78,8 @@ hr {
       &:hover {
         box-shadow: 1px 1px 5px blue;
       }
-    }
+		}
+		
     .post-button {
 			width: 100%;
       padding: 10px;
@@ -93,34 +95,7 @@ hr {
 	.posted {
 		width: 100%;
 		margin: 0 auto;
-		.link_profile {
-			font-size: 18px;
-			font-weight: bold;
-			color: blue;
-			text-decoration: none;
-		}
-		.time-post {
-			color: grey;
-			font-size: 12px;
-		}
-		.p-post {
-			margin: 5px 0;
-			border-radius: 15px;
-			border: solid 1px #002a8c;
-			padding: 10px;
-			background: #d4d4d4;
-			&:hover {
-				box-shadow: 1px 1px 5px #002a8c;
-			}
-		}
-		.comments {
-			margin: 5px 0;
-			border-radius: 15px;
-			border: solid 1px black;
-			padding: 10px;
-		  margin-left: 30px;
-			background: #e8e8e8
-		}
+	}
 		.comment {
 			height: 1em;
     	width: calc(100% - 23px);
@@ -133,19 +108,45 @@ hr {
 				box-shadow: 1px 1px 5px #17c25e;
 			}
 		}
-		.comment-button {
-			width: 100%;
-      padding: 5px;
-			background: linear-gradient(to bottom, #82ffb6, #00a344);
-			border-radius: 15px;
-			color: white;
-			font-size: 15px;
+		.link_profile {
+			font-size: 18px;
 			font-weight: bold;
-			border-color: inherit;
-			cursor: pointer;
-			&:hover {
-				background: linear-gradient(to bottom, #00a344, #82ffb6);
-			}
+			color: blue;
+			text-decoration: none;
+		}
+		.time-post {
+			color: grey;
+			font-size: 12px;
+		}
+		.comments {
+			margin: 5px 0;
+			border-radius: 15px;
+			border: solid 1px black;
+			padding: 10px;
+		  margin-left: 30px;
+			background: #e8e8e8
+		}
+	.comment-button {
+		width: 100%;
+		padding: 5px;
+		background: linear-gradient(to bottom, #82ffb6, #00a344);
+		border-radius: 15px;
+		color: white;
+		font-size: 15px;
+		font-weight: bold;
+		border-color: inherit;
+		cursor: pointer;
+		&:hover {
+			background: linear-gradient(to bottom, #00a344, #82ffb6);
 		}
 	}
-}
+	.p-post {
+		margin: 5px 0;
+		border-radius: 15px;
+		border: solid 1px #002a8c;
+		padding: 10px;
+		background: #d4d4d4;
+		&:hover {
+			box-shadow: 1px 1px 5px #002a8c;
+		}
+	}
