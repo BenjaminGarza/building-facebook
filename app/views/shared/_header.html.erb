@@ -1,4 +1,4 @@
-<header>
+<header class="f-nav-show">
   <nav>
     <ul>
       <%= link_to "<li>Home</li>".html_safe, root_path %>
@@ -9,3 +9,28 @@
     <ul/>
   </nav>
 </header>
+
+<header class="s-nav-show">
+  <nav>
+    <ul>
+      <%= link_to image_tag("bars.svg", width: 20, id: "img_menu"), "#", id: "changeIcon" %>
+    <ul/>
+  </nav>
+  <nav id="nav-menu-show">
+    <ul class="ul-menu-show">
+      <%= link_to "<li>Home</li>".html_safe, root_path %>
+      <%= link_to "<li>#{current_user.name.capitalize}</li>".html_safe, profiles_path(current_user.id) %>
+      <%= link_to "<li>Notifications</li>".html_safe, "#" %>
+      <%= link_to "<li>Friend requests</li>".html_safe, "#" %>
+      <%= link_to "<li>Sign out</li>".html_safe, destroy_user_session_path, method: :delete %>
+    <ul/>
+  </nav>
+</header>
+
+<script type="text/javascript">
+  var a = document.getElementById("changeIcon");
+  var nav = document.getElementById("nav-menu-show");
+  a.onclick = function() {
+    nav.style.display = 'none';
+  }
+</script>

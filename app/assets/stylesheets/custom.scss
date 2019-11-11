@@ -65,15 +65,16 @@ hr {
   margin: 0 auto;
   padding: 10px;
 	background: white;
-	margin-top: 40px;
-	.error-content {
+	margin-top: 30px;
+}
+.error-content {
 		max-width: 990px;
 		background: orange;
 		color: white;
 		padding: 10px;
 		border-radius: 15px;
 		font-weight: bold;
-	}
+}
   .new_post {
     display: flex;
     flex-direction: column;
@@ -104,6 +105,7 @@ hr {
 	.posted {
 		width: 100%;
 		margin: 0 auto;
+		}
 		.link_profile {
 			font-size: 18px;
 			font-weight: bold;
@@ -157,5 +159,3 @@ hr {
 				background: linear-gradient(to bottom, #00a344, #82ffb6);
 			}
 		}
-	}
-}
