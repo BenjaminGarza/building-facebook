@@ -5,30 +5,41 @@ h1{
   font-size: 200%;
 }
 body{
-  display: flex;
+  display: grid;
+  grid-row-gap: 40px;
   aside{
-    padding: 6%;
-    justify-content: space-around;
-    width: 30%;
-    section{
-      padding: 6%;
-    }
-  }
-  main{
-    padding: 6%;
-    justify-content: space-around;
-    width: 70%;
-    display: flex;
-     div{
-      justify-content: space-around;
-       padding: 6%;
+    margin-top: 30px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    div{
+      width: 100%;
       article{
         border: .5px solid lightgray;
         padding: 8px;
+        section{
+          padding: 30px;
+        }
+      }
+    }
+  }
+  main{
+    margin-top: 14px;
+    grid-column-start: 5;
+    grid-column-end: 11;
+    display: flex;
+     div{
+      width: 100%;
+      article{
+        border: .5px solid lightgray;
+        padding: 30px;
         div{
           padding-left: 0px;
         }
       }
      }
   }
+}
+
+.comments{
+  width: 93.5%;
 }
