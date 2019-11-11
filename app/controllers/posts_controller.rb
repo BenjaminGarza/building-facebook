@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
-      @posts = Post.all.order(:created_at)
+      @posts = Post.where('user_id IN(?) OR user_id = ?', @ids, current_user.id).order(:created_at)
       @comment = Comment.new
       render 'index'
     end
