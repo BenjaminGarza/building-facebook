@@ -28,11 +28,12 @@ gem 'omniauth', '~> 1.9'
 # gem 'bcrypt', '~> 3.1.7'
 # Linter fixes with rubocop
 gem 'omniauth-facebook'
+gem 'rspec-wait', '~> 0.0.8'
 gem 'rubocop', '~> 0.76.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-#gravitar
+# gravitar
 gem 'gravtastic'
 gem 'jquery', '~> 0.0.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'

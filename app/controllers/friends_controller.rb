@@ -39,15 +39,13 @@ class FriendsController < ApplicationController
   end
 
   def notify
-    @notifications = Friend.where("created_at = updated_at AND receiver_id = ?", current_user.id).count
+    @notifications = Friend.where('created_at = updated_at AND receiver_id = ?', current_user.id).count
     respond_to do |format|
-     format.html
-     format.js {}
-     format.json {
-        render json: {:notifications => @notifications}
-     }
-   end
+      format.html
+      format.js {}
+      format.json do
+        render json: { notifications: @notifications }
+      end
+    end
   end
-
- 
 end
