@@ -29,6 +29,7 @@ gem 'omniauth', '~> 1.9'
 # Linter fixes with rubocop
 gem 'omniauth-facebook'
 gem 'rubocop', '~> 0.76.0'
+gem 'rspec-wait', '~> 0.0.8'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
