@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
     @requests = User.where('id in(?)', @user_ids)
     @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
     @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
-    @posts = Post.where('user_id IN(?)', current_user.id).order(:created_at)
+    @posts = Post.where('user_id IN(?)', @user.id).order(:created_at)
     @comment = Comment.new
   end
 

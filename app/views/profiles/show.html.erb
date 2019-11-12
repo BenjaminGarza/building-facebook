@@ -1,16 +1,16 @@
-
+<body class ="body">
   <aside>
-    <div>
       <article>
         <section class ="name-gravitar">
-          <div> <h1> <%= @user.name.capitalize %> </h1> </div>
-
-          <div> <%= gravatar_for @user %> </div>
+          <div friend-div> 
+            <%= gravatar_for @user %> 
+            <h1 class ="h1"> <%= @user.name.capitalize %> </h1> 
+          </div>
         </section>
         <section>
           <% if current_user.id == @user.id && @requests.any? %>
-
-            <h1> Friend requests </h1>
+          
+            <h1 class ="h1"> Friend requests </h1>
             <%= flash[:warning] %>
             <% @requests.each do |request| %>
               <%= request.name %>
@@ -31,22 +31,24 @@
           <%= link_to "Ignore friend", ignore_path(@user.id) %>
           <% end %>
         </section>
-        <section>
-          <h1> Friends </h1>
-          <br>
+        <section class="all-friends">
+          <h1 class ="h1" id="friends-title"> Friends </h1>
+          
+          
           <% @friends.each do |friend| %>
-            <%= link_to "#{friend.name.capitalize}", profiles_path(friend.id) %>
-            <div> <%= gravatar_for friend %> </div>
+            <div class="friend-div">
+            <h3 class="friends-font"> <%= link_to "#{friend.name.capitalize}", profiles_path(friend.id) %> </h3>
+            <div class="gravatar-container"> <%= gravatar_for friend %> </div>
             <% if current_user.id == @user.id %>
-            <%= link_to "Remove friend", ignore_path(friend.id) %>
+            <h3 class="friends-font"> <%= link_to "Remove", ignore_path(friend.id) %> </h3>
             <% end %>
-            <br> <br>
+            </div>
           <% end %>
+          
         </section>
       </article>
-    </div>
   </aside>
-  <main>
+  <main class = "main">
     <div>
       <% @posts.each do |post|%>
         <br>
@@ -84,3 +86,4 @@
       <% end %>
     <div>
   </main>
+</body>
