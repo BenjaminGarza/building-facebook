@@ -17,7 +17,7 @@
       <span><%= link_to "#{post.user.name}", profiles_path(post.user.id), class: "link_profile"%>
         <%= "shared a post. " %>
         <span class="time-post"><%= time_ago_in_words(post.created_at) %> ago.</span></span>
-      <p class="p-post"> <%= post.content %> </p>
+      <div class="p-post"> <%= simple_format(post.content) %> </div>
       <div>
         <%= link_to image_tag("thumbs-up.svg", width: 20), likes_path(post.id), name: "like" %>
         <%= post.likes_count %>
@@ -35,7 +35,7 @@
 
         <div class="comments">
           <span><%= link_to comment.user.name, profiles_path(comment.user.id), class: "link_profile" %>
-            <%= comment.content %></span>
+            <%= simple_format(comment.content) %></span>
         </div>
       <% end %>
       <br>
