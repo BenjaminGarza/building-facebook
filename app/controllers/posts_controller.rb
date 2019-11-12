@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to posts_path
+      redirect_to request.referrer
     else
       @posts = Post.where('user_id IN(?) OR user_id = ?', @ids, current_user.id).order(:created_at)
       @comment = Comment.new
