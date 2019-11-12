@@ -10,7 +10,7 @@
         <section>
           <% if current_user.id == @user.id && @requests.any? %>
           
-            <h1 class ="h1"> Friend requests </h1>
+            <h1 class ="friend-requests-title"> Friend requests </h1>
             <%= flash[:warning] %>
             <% @requests.each do |request| %>
               <%= request.name %>

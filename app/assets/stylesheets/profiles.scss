@@ -32,6 +32,14 @@
     #friends-title{
       width: 100%;
     }
+    article{
+      section{
+        a{
+          text-decoration: none;
+          color: blue;
+        }
+      }
+    }
   }
   .all-friends{
     padding: 3px;
@@ -83,4 +91,8 @@
     color: blue;
     font-size: 175%;
   }
+}
+.friend-requests-title{
+  padding-bottom: 10px;
+  font-size: 200%;
 }
