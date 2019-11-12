@@ -19,7 +19,7 @@
         <span class="time-post"><%= time_ago_in_words(post.created_at) %> ago.</span></span>
       <p class="p-post"> <%= post.content %> </p>
       <div>
-        <%= link_to image_tag("thumbs-up.svg", width: 20), likes_path(post.id) %>
+        <%= link_to image_tag("thumbs-up.svg", width: 20), likes_path(post.id), name: "like" %>
         <%= post.likes_count %>
       </div>
        <% if flash.any? %>
