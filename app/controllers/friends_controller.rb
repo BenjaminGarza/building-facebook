@@ -37,4 +37,15 @@ class FriendsController < ApplicationController
     @friend&.destroy
     redirect_to profiles_path(params[:friend_id])
   end
+
+  def notify
+    @notifications = Friend.where("created_at = updated_at AND receiver_id = ?", current_user.id).count
+    respond_to do |format|
+     format.html
+     format.js {}
+     format.json {
+        render json: {:notifications => @notifications}
+     }
+   end
+  end
 end

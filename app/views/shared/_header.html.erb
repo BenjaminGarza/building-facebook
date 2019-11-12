@@ -3,7 +3,7 @@
     <ul>
       <%= link_to "<li>Home</li>".html_safe, root_path %>
       <%= link_to "<li>#{current_user.name.capitalize}</li>".html_safe, profiles_path(current_user.id) %>
-      <%= link_to "<li>Notifications</li>".html_safe, "#" %>
+      <%= link_to "<li>Notifications <span id='notification_count'></span></li>".html_safe, "#" %>
       <%= link_to "<li>Friend requests</li>".html_safe, "#" %>
       <%= link_to "<li>Sign out</li>".html_safe, destroy_user_session_path, method: :delete %>
     <ul/>

@@ -4,12 +4,12 @@
       <article>
         <section class ="name-gravitar">
           <div> <h1> <%= @user.name.capitalize %> </h1> </div>
-          
+
           <div> <%= gravatar_for @user %> </div>
         </section>
         <section>
           <% if current_user.id == @user.id && @requests.any? %>
-          
+
             <h1> Friend requests </h1>
             <%= flash[:warning] %>
             <% @requests.each do |request| %>
@@ -19,9 +19,9 @@
               <br> <br>
             <% end %>
             <% elsif current_user.id == @user.id%>
-              
+
           <% elsif @sender.nil? && @receiver.nil?%>
-            <%= link_to "Add as friend", add_path(@user.id) %>
+              <%= link_to "Add as friend", add_path(@user.id)%>        
           <% elsif !@sender.nil? && !@sender.confirmed && current_user.id = @sender.id %>
             <%= link_to "Cancel request", cancel_path(@user.id) %>
           <% elsif @receiver.nil? && @sender.confirmed || @receiver.confirmed %>
@@ -68,7 +68,7 @@
               </ul>
             <% end %>
           <% post.comments.each do |comment| %>
-          
+
             <div class="comments">
             <span><%= link_to comment.user.name, profiles_path(comment.user.id), class: "link_profile" %>
               <%= comment.content %></span>

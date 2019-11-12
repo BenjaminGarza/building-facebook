@@ -34,8 +34,8 @@ gem 'rubocop', '~> 0.76.0'
 
 #gravitar
 gem 'gravtastic'
-
-
+gem 'jquery', '~> 0.0.1'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  class OnlyAjaxRequest
+     def matches?(request)
+       request.xhr?
+     end
+  end
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   authenticated :user do
@@ -17,6 +22,8 @@ Rails.application.routes.draw do
   get 'ignore/:friend_id', to: "friends#ignore", as: 'ignore'
   get 'remove/:friend_id', to: "friends#remove", as: 'remove'
   get 'accept/:friend_id', to: "friends#accept", as: 'accept'
+
+  post '/notify', to: "friends#notify", as: 'notify'
 
   resources :posts
   resources :comments
