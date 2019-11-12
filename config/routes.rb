@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'likes/:post_id', to: "posts#likes", as: 'likes'
 
   get 'profiles/:id', to: 'profiles#show', as: 'profiles'
+  get 'profiles/:id/all', to: 'profiles#index', as: 'find_friends'
   get 'add/:friend_id', to: "friends#add", as: 'add'
 
   get 'cancel/:friend_id', to: "friends#cancel", as: 'cancel'

@@ -32,12 +32,12 @@
     #friends-title{
       width: 100%;
     }
+  }
   .all-friends{
     padding: 3px;
     display: flex;
     flex-wrap: wrap;
     }
-  }
   .main{
     margin-top: 14px;
     grid-column-start: 4;
@@ -69,5 +69,18 @@
     h1{
       padding: 8%;
     }
+  }
+}
+.all-users-title{
+  margin: 40px;
+  font-size: 200%;
+}
+
+.find-friends{
+  padding-top: 15px;
+  a{
+    text-decoration: none;
+    color: blue;
+    font-size: 175%;
   }
 }

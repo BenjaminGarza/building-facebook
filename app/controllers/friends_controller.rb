@@ -48,4 +48,6 @@ class FriendsController < ApplicationController
      }
    end
   end
+
+ 
 end
