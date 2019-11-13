@@ -13,7 +13,7 @@
             <h1 class ="friend-requests-title"> Friend requests </h1>
             <%= flash[:warning] %>
             <% @requests.each do |request| %>
-              <%= request.name %>
+              <%= request.name.capitalize %>
               <%= link_to "Accept friend", accept_path(request.id) %>
               <%= link_to "Ignore friend", ignore_path(request.id) %>
               <br> <br>
