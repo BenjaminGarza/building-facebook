@@ -10,7 +10,7 @@ RSpec.describe 'signin', type: :feature do
 
   scenario 'should be signed in' do
     visit posts_path
-    expect(page).to have_content('You need to sign in')
+    expect(page).to have_content('You need to sign in or sign up before continuing.')
   end
 
   scenario 'should be successfull sign in and should create post' do

@@ -12,11 +12,6 @@ class User < ApplicationRecord
   validates :name, presence: true
   devise :omniauthable, omniauth_providers: [:facebook]
 
-  def self.new_with_session(params, session)
-    super.tap do |user|
-    end
-  end
-
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email

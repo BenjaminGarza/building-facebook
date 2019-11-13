@@ -1,50 +1,50 @@
-<h1>Posts</h1>
-
-<h2>Create a post!</h2>
-
-<% if @post.errors.any? %>
-  <% @post.errors.full_messages.each do |msg|%>
-    <%= msg %>
-    <br>
-    <% end %>
-<% end %>
-
-<%= form_for(@post) do |f|%>
-  <%= f.text_area :content %>
-  <%= f.submit "Post"%>
-<% end %>
-
-<% @posts.each do |post|%>
-  <br>
-  <%= link_to "#{post.user.name}:", profiles_path(post.user.id) %>
-  <%= post.content %>
-  <div>
-    <%= link_to "Likes:", likes_path(post.id) %>
-    <%= post.likes_count %>
-  </div>
-   <% if flash.any? %>
-      <ul>
-        <% flash.each do |type,obj| %>
-          <% if type == "comment_errors" && post.id == obj[1]%>
-           <li><%= obj[0][0] %></li>
+<div id="post-container">
+  <%= form_for(@post) do |f|%>
+    <%= f.text_area :content, class: "post", placeholder: "Tell us!" %>
+      <% if @post.errors.any? %>
+        <ul class="error-content">
+          <% @post.errors.full_messages.each do |msg|%>
+            <li><%= msg %></li>
           <% end %>
+        </ul>
+      <% end %>
+    <%= f.submit "Post", class: "post-button"%>
+  <% end %>
+  <hr>
+  <div class="posted">
+    <% @posts.each do |post|%>
+      <br>
+      <span><%= link_to "#{post.user.name}", profiles_path(post.user.id), class: "link_profile"%>
+        <%= "shared a post. " %>
+        <span class="time-post"><%= time_ago_in_words(post.created_at) %> ago.</span></span>
+      <div class="p-post"> <%= simple_format(post.content) %> </div>
+      <div>
+        <%= link_to image_tag("thumbs-up.svg", width: 20), likes_path(post.id), name: "like" %>
+        <%= post.likes_count %>
+      </div>
+       <% if flash.any? %>
+            <% flash.each do |type,obj| %>
+              <% if type == "comment_errors" && post.id == obj[1]%>
+              <ul class="error-content">
+                <li><%= obj[0][0] %></li>
+              </ul>
+              <% end %>
+            <% end %>
         <% end %>
-      </ul>
-    <% end %>
-  <% post.comments.each do |comment| %>
-   
-    <div class="comments">
-      <%= comment.content %>
-    </div>
-  <% end %>
-  <br>
-  <%= form_for(@comment) do |f| %>
-    <%= f.text_area :content %>
-    <%= f.hidden_field :post_id, value: post.id %>
-    <%= f.submit "Comment" %>
-  <% end %>
-<% end %>
+      <% post.comments.each do |comment| %>
 
-<%= link_to "Sign out",  destroy_user_session_path, method: :delete %>
-<%= link_to "Edit profile", edit_user_registration_path %>
-<%= link_to "View Profile", profiles_path(current_user.id) %>
+        <div class="comments">
+          <span><%= link_to comment.user.name, profiles_path(comment.user.id), class: "link_profile" %>
+            <%= simple_format(comment.content) %></span>
+        </div>
+      <% end %>
+      <br>
+      <%= form_for(@comment) do |f| %>
+        <%= f.text_area :content, class: "comment", placeholder: "Comment your friend's post" %>
+        <%= f.hidden_field :post_id, value: post.id %>
+        <%= f.submit "Comment", class: "comment-button" %>
+      <% end %>
+      <hr>
+    <% end %>
+  </div>
+</div>

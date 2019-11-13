@@ -15,7 +15,7 @@ RSpec.describe 'likepost', type: :feature do
     fill_in('user_email', with: 'tom@gmail.com')
     fill_in('user_password', with: '123456')
     click_button('commit')
-    expect(page).to have_content('Posts')
+    expect(page).to have_content('Signed in successfully')
     fill_in('comment_content', with: 'Comment 1')
     click_button('Comment')
     expect(page).to have_content('Comment 1')
