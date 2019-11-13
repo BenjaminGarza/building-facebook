@@ -12,6 +12,6 @@ posts with the Post class and comments with the Comment class
 Ruby version 2.6.4
 Rails version 6.0.0
 
-[Live Website:](https://git.heroku.com/building-facebook.git)
+[Live Website:](https://intense-harbor-38641.herokuapp.com/)
 
 Authors: [Andoni Uzquiano](https://github.com/Juakata),  [Benjamin Garza](https://github.com/BenjaminGarza)

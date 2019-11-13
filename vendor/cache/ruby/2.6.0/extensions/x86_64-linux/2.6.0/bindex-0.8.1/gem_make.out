@@ -1,0 +1,15 @@
+current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191112-7524-16yjano.rb extconf.rb
+creating Makefile
+
+current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -m 0755 cruby.so ./.gem.20191112-7524-1ace41c/skiptrace/internal
