@@ -18,6 +18,11 @@ gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+<<<<<<< HEAD
+=======
+gem 'jbuilder', '~> 2.7'
+# authentication with devise
+>>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'jbuilder', '~> 2.7'
 gem 'omniauth', '~> 1.9'
@@ -26,11 +31,21 @@ gem 'omniauth', '~> 1.9'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Linter fixes with rubocop
+gem 'omniauth-facebook'
+gem 'rspec-wait', '~> 0.0.8'
+gem 'rspec-wait', '~> 0.0.8'
 gem 'rubocop', '~> 0.76.0'
+<<<<<<< HEAD
 
+=======
+>>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# gravitar
+gem 'gravtastic'
+gem 'jquery', '~> 0.0.1'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -39,7 +54,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
+  gem 'factory_bot', '~> 4.8', '>= 4.8.2'
   gem 'rspec-rails', '~> 3.5'
 end
 

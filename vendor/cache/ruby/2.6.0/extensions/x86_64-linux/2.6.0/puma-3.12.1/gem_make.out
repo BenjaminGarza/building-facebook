@@ -1,5 +1,9 @@
 current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/puma-3.12.1/ext/puma_http11
+<<<<<<< HEAD
 /home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191112-7524-gbz18z.rb extconf.rb
+=======
+/home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191101-8481-1vnow2i.rb extconf.rb
+>>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
 checking for BIO_read() in -lcrypto... yes
 checking for SSL_CTX_new() in -lssl... yes
 checking for openssl/bio.h... yes
@@ -54,4 +58,8 @@ linking shared-object puma/puma_http11.so
 
 current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/puma-3.12.1/ext/puma_http11
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -m 0755 puma_http11.so ./.gem.20191112-7524-14dynks/puma
+=======
+/usr/bin/install -m 0755 puma_http11.so ./.gem.20191101-8481-1aeepd2/puma
+>>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d

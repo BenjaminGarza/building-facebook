@@ -1,5 +1,9 @@
 current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/bcrypt-3.1.13/ext/mri
+<<<<<<< HEAD
 /home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191112-7524-upi7tx.rb extconf.rb
+=======
+/home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191101-8481-1h1ls29.rb extconf.rb
+>>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
 creating Makefile
 
 current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/bcrypt-3.1.13/ext/mri
@@ -16,4 +20,8 @@ linking shared-object bcrypt_ext.so
 
 current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/bcrypt-3.1.13/ext/mri
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -m 0755 bcrypt_ext.so ./.gem.20191112-7524-j0w7ao
+=======
+/usr/bin/install -m 0755 bcrypt_ext.so ./.gem.20191101-8481-mci71c
+>>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d

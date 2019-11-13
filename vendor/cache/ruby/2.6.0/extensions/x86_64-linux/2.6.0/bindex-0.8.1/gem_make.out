@@ -1,5 +1,9 @@
 current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+<<<<<<< HEAD
 /home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191112-7524-16yjano.rb extconf.rb
+=======
+/home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191101-8481-13ardgo.rb extconf.rb
+>>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
 creating Makefile
 
 current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
@@ -12,4 +16,8 @@ linking shared-object skiptrace/internal/cruby.so
 
 current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -m 0755 cruby.so ./.gem.20191112-7524-1ace41c/skiptrace/internal
+=======
+/usr/bin/install -m 0755 cruby.so ./.gem.20191101-8481-a6zycm/skiptrace/internal
+>>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d

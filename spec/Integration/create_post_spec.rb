@@ -10,7 +10,7 @@ RSpec.describe 'signin', type: :feature do
 
   scenario 'should be signed in' do
     visit posts_path
-    expect(page).to have_content('You need to sign in')
+    expect(page).to have_content('You need to sign in or sign up before continuing.')
   end
 
   scenario 'should be successfull sign in and should create post' do
@@ -22,5 +22,15 @@ RSpec.describe 'signin', type: :feature do
     fill_in('post_content', with: 'Hello world!')
     click_button('commit')
     expect(page).to have_content('Hello world!')
+  end
+
+  scenario 'should not create post' do
+    visit root_path
+    fill_in('user_email', with: 'tom@gmail.com')
+    fill_in('user_password', with: '123456')
+    click_button('commit')
+    expect(page).to have_content('Signed in successfully')
+    click_button('commit')
+    expect(page).to have_content("Content can't be blank")
   end
 end

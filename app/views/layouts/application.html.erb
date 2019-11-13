@@ -1,21 +1,49 @@
+<%= render 'shared/header' unless current_user.nil?%>
 <!DOCTYPE html>
 <html>
   <head>
     <title>BuildingFacebook</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
     <%= yield %>
+
+    <script type="text/javascript">
+      var a = document.getElementById("changeIcon");
+      var nav = document.getElementById("nav-menu-show");
+      var img_menu = document.getElementById("img_menu");
+      change = 1;
+
+      a.onclick = function() {
+        if(change == 2){
+          nav.style.display = 'none';
+          img_menu.src = "/assets/bars.svg";
+          change = 1;
+        }else{
+          nav.style.display = 'block';
+          img_menu.src = "/assets/cross.svg";
+          change = 2;
+        }
+      }
+
+      window.setInterval(function () {
+        $.ajax({
+          type: "POST",
+          url: "/notify",
+          dataType: 'json',
+          success: function(data, textStatus, jqXHR){
+            $("#notification_count").html(data.notifications);
+          },
+          error: function(jqXHR, textStatus, errorThrown){}
+        });
+      }, 1000);
+    </script>
   </body>
 </html>

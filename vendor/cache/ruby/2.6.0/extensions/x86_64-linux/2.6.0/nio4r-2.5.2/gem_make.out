@@ -1,5 +1,9 @@
 current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nio4r-2.5.2/ext/nio4r
+<<<<<<< HEAD
 /home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191112-7524-20yo4h.rb extconf.rb
+=======
+/home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191101-8481-tah95b.rb extconf.rb
+>>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
 checking for unistd.h... yes
 checking for linux/aio_abi.h... yes
 checking for sys/select.h... yes
@@ -96,4 +100,8 @@ linking shared-object nio4r_ext.so
 
 current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nio4r-2.5.2/ext/nio4r
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -m 0755 nio4r_ext.so ./.gem.20191112-7524-1phgyso
+=======
+/usr/bin/install -m 0755 nio4r_ext.so ./.gem.20191101-8481-1ww2bx8
+>>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d

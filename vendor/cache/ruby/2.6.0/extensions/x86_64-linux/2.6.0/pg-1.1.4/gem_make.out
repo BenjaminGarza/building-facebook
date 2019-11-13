@@ -1,5 +1,9 @@
 current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/pg-1.1.4/ext
+<<<<<<< HEAD
 /home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191112-7524-ofx69s.rb extconf.rb
+=======
+/home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191101-8481-1ab9oz0.rb extconf.rb
+>>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
 checking for pg_config... yes
 Using config values from /usr/bin/pg_config
 checking for libpq-fe.h... yes
@@ -48,4 +52,8 @@ linking shared-object pg_ext.so
 
 current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/pg-1.1.4/ext
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -m 0755 pg_ext.so ./.gem.20191112-7524-1c8nc75
+=======
+/usr/bin/install -m 0755 pg_ext.so ./.gem.20191101-8481-15k0o2
+>>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
