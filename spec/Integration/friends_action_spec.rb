@@ -53,10 +53,10 @@ RSpec.describe 'friend_request', type: :feature do
     fill_in('user_password', with: '123456')
     click_button('commit')
     click_link('Ben', match: :first)
-    expect(page).to have_content('tom')
+    expect(page).to have_content('Tom')
     expect(page).to have_content('Ignore friend')
     click_link('Ignore friend')
-    expect(page).to_not have_content('tom')
+    expect(page).to_not have_content('Tom')
   end
 
   scenario 'should ignore friend request' do
@@ -73,7 +73,7 @@ RSpec.describe 'friend_request', type: :feature do
     fill_in('user_password', with: '123456')
     click_button('commit')
     click_link('Ben', match: :first)
-    expect(page).to have_content('tom')
+    expect(page).to have_content('Tom')
     click_link('Accept friend')
     click_link('f-sing-out')
     fill_in('user_email', with: 'tom@gmail.com')
