@@ -1,16 +1,15 @@
 <main class = "log-in-main">
   <article class = "log-in-article">
   <div class ="messages"> <h2>Sign up</h2> </div>
-
-      <div class="error-style">
-       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-      </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+       <div class="error-style">
+         <%= render "devise/shared/error_messages", resource: resource %>
+        </div>
 
       <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-    </div>
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      </div>
 
       <div class="field">
         <%= f.label :email %><br />

@@ -12,6 +12,7 @@ RSpec.describe 'signup', type: :feature do
   scenario 'should be a valid signup' do
     visit root_path
     click_link('Sign up')
+    expect(page).to have_content('Password confirmation')
     fill_in('user_name', with: 'tom')
     fill_in('user_email', with: 'tom@gmail.com')
     fill_in('user_password', with: '123456')
@@ -25,6 +26,7 @@ RSpec.describe 'signup', type: :feature do
 
     visit root_path
     click_link('Sign up')
+    expect(page).to have_content('Password confirmation')
     fill_in('user_name', with: 'tom')
     fill_in('user_email', with: 'tom@gmail.com')
     fill_in('user_password', with: '123456')
