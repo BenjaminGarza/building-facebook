@@ -30,6 +30,7 @@ class ProfilesController < ApplicationController
     @friends_id3 = Friend.select(:sender_id).where('(receiver_id = ?) AND confirmed = true', current_user.id)
     @friends_id4 = Friend.select(:receiver_id).where('(sender_id = ?) AND confirmed = true', current_user.id)
     @ids2 = set_ids(@friends_id3, @friends_id4)
+    @ids2 << current_user.id
     @not_friends = User.where('id NOT IN (?)', @ids2)
     @not_friends = User.all if @not_friends.empty?
   end
