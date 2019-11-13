@@ -1,9 +1,5 @@
 current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nio4r-2.5.2/ext/nio4r
-<<<<<<< HEAD
-/home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191112-7524-20yo4h.rb extconf.rb
-=======
 /home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191101-8481-tah95b.rb extconf.rb
->>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
 checking for unistd.h... yes
 checking for linux/aio_abi.h... yes
 checking for sys/select.h... yes
@@ -25,7 +21,7 @@ compiling nio4r_ext.c
 In file included from nio4r_ext.c:7:0:
 ../libev/ev.c:511:48: warning: "/*" within comment [-Wcomment]
  /*#define MIN_INTERVAL  0.00000095367431640625 /* 1/2**20, good till 2200 */
-                                                 
+
 In file included from nio4r_ext.c:7:0:
 ../libev/ev.c: In function ‘ecb_binary32_to_binary16’:
 ../libev/ev.c:1302:13: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
@@ -62,10 +58,10 @@ In file included from nio4r_ext.c:7:0:
 ../libev/ev.c: At top level:
 ../libev/ev.c:5268:27: warning: "/*" within comment [-Wcomment]
  /* EV_STAT     0x00001000 /* stat data changed */
-                            
+
 ../libev/ev.c:5269:27: warning: "/*" within comment [-Wcomment]
  /* EV_EMBED    0x00010000 /* embedded event loop needs sweep */
-                            
+
 In file included from nio4r_ext.c:7:0:
 ../libev/ev.c: In function ‘evpipe_write’:
 ../libev/ev.c:2508:11: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
@@ -100,8 +96,4 @@ linking shared-object nio4r_ext.so
 
 current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nio4r-2.5.2/ext/nio4r
 make "DESTDIR=" install
-<<<<<<< HEAD
-/usr/bin/install -m 0755 nio4r_ext.so ./.gem.20191112-7524-1phgyso
-=======
 /usr/bin/install -m 0755 nio4r_ext.so ./.gem.20191101-8481-1ww2bx8
->>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d

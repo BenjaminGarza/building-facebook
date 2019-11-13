@@ -18,11 +18,8 @@ gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-<<<<<<< HEAD
-=======
 gem 'jbuilder', '~> 2.7'
 # authentication with devise
->>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'jbuilder', '~> 2.7'
 gem 'omniauth', '~> 1.9'
@@ -35,10 +32,6 @@ gem 'omniauth-facebook'
 gem 'rspec-wait', '~> 0.0.8'
 gem 'rspec-wait', '~> 0.0.8'
 gem 'rubocop', '~> 0.76.0'
-<<<<<<< HEAD
-
-=======
->>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

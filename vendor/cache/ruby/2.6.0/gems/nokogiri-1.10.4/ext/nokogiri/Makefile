@@ -31,13 +31,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-<<<<<<< HEAD
-sitearchdir = $(DESTDIR)./.gem.20191112-7524-wia1cx
-sitelibdir = $(DESTDIR)./.gem.20191112-7524-wia1cx
-=======
 sitearchdir = $(DESTDIR)./.gem.20191101-8481-nvz019
 sitelibdir = $(DESTDIR)./.gem.20191101-8481-nvz019
->>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -68,7 +63,7 @@ bindir = $(exec_prefix)/bin
 archdir = $(rubyarchdir)
 
 
-CC_WRAPPER = 
+CC_WRAPPER =
 CC = gcc
 CXX = g++
 LIBRUBY = $(LIBRUBY_SO)
@@ -80,31 +75,31 @@ OUTFLAG = -o $(empty)
 COUTFLAG = -o $(empty)
 CSRCFLAG = $(empty)
 
-RUBY_EXTCONF_H = 
+RUBY_EXTCONF_H =
 cflags   = $(optflags) $(debugflags) $(warnflags)
 cxxflags = $(optflags) $(debugflags) $(warnflags)
 optflags = -O3
 debugflags = -ggdb3
 warnflags = -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wduplicated-cond -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wrestrict -Wwrite-strings -Wimplicit-fallthrough=0 -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable
-cppflags = 
+cppflags =
 CCDLFLAGS = -fPIC
 CFLAGS   = $(CCDLFLAGS) $(cflags)  -fPIC  -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wmissing-noreturn -Winline -DNOKOGIRI_USE_PACKAGED_LIBRARIES $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
-DEFS     = 
+DEFS     =
 CPPFLAGS = -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAVE_EXSLTFUNCREGISTER -DHAVE_XMLHASFEATURE -DHAVE_XMLFIRSTELEMENTCHILD -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETPARSERSTRUCTUREDERRORS -I/home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/include -I/home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/include/libxml2 -I/home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/include/libxml2  $(DEFS) $(cppflags) "-DNOKOGIRI_LIBXML2_PATH=\"/home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9\"" "-DNOKOGIRI_LIBXML2_PATCHES=\"0001-Revert-Do-not-URI-escape-in-server-side-includes.patch 0002-Remove-script-macro-support.patch 0003-Update-entities-to-remove-handling-of-ssi.patch\"" "-DNOKOGIRI_LIBXSLT_PATH=\"/home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33\"" "-DNOKOGIRI_LIBXSLT_PATCHES=\"0001-Fix-security-framework-bypass.patch\""
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
 ldflags  = -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic
-dldflags = -Wl,--compress-debug-sections=zlib 
-ARCH_FLAG = 
+dldflags = -Wl,--compress-debug-sections=zlib
+ARCH_FLAG =
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CC) -shared
 LDSHAREDXX = $(CXX) -shared
 AR = ar
-EXEEXT = 
+EXEEXT =
 
 RUBY_INSTALL_NAME = $(RUBY_BASE_NAME)
 RUBY_SO_NAME = ruby
-RUBYW_INSTALL_NAME = 
+RUBYW_INSTALL_NAME =
 RUBY_VERSION_NAME = $(RUBY_BASE_NAME)-$(ruby_version)
 RUBYW_BASE_NAME = rubyw
 RUBY_BASE_NAME = ruby
@@ -128,31 +123,31 @@ TOUCH = exit >
 
 #### End of system configuration section. ####
 
-preload = 
+preload =
 libpath = . $(libdir) /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib
 LIBPATH =  -L. -L$(libdir) -Wl,-rpath,$(libdir) -L/home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib -Wl,-rpath,/home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib -L/home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib -Wl,-rpath,/home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib
-DEFFILE = 
+DEFFILE =
 
 CLEANFILES = mkmf.log
-DISTCLEANFILES = 
-DISTCLEANDIRS = 
+DISTCLEANFILES =
+DISTCLEANDIRS =
 
-extout = 
-extout_prefix = 
+extout =
+extout_prefix =
 target_prefix = /nokogiri
-LOCAL_LIBS = 
-LIBS = $(LIBRUBYARG_SHARED) /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib/libexslt.a -lm -ldl -lz /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib/libxml2.a /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib/libxslt.a -ldl -lm -lz /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib/libxml2.a -lm   -lc 
+LOCAL_LIBS =
+LIBS = $(LIBRUBYARG_SHARED) /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib/libexslt.a -lm -ldl -lz /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib/libxml2.a /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxslt/1.1.33/lib/libxslt.a -ldl -lm -lz /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/nokogiri-1.10.4/ports/x86_64-pc-linux-gnu/libxml2/2.9.9/lib/libxml2.a -lm   -lc
 ORIG_SRCS = html_document.c html_element_description.c html_entity_lookup.c html_sax_parser_context.c html_sax_push_parser.c nokogiri.c xml_attr.c xml_attribute_decl.c xml_cdata.c xml_comment.c xml_document.c xml_document_fragment.c xml_dtd.c xml_element_content.c xml_element_decl.c xml_encoding_handler.c xml_entity_decl.c xml_entity_reference.c xml_io.c xml_libxml2_hacks.c xml_namespace.c xml_node.c xml_node_set.c xml_processing_instruction.c xml_reader.c xml_relax_ng.c xml_sax_parser.c xml_sax_parser_context.c xml_sax_push_parser.c xml_schema.c xml_syntax_error.c xml_text.c xml_xpath_context.c xslt_stylesheet.c
-SRCS = $(ORIG_SRCS) 
+SRCS = $(ORIG_SRCS)
 OBJS = html_document.o html_element_description.o html_entity_lookup.o html_sax_parser_context.o html_sax_push_parser.o nokogiri.o xml_attr.o xml_attribute_decl.o xml_cdata.o xml_comment.o xml_document.o xml_document_fragment.o xml_dtd.o xml_element_content.o xml_element_decl.o xml_encoding_handler.o xml_entity_decl.o xml_entity_reference.o xml_io.o xml_libxml2_hacks.o xml_namespace.o xml_node.o xml_node_set.o xml_processing_instruction.o xml_reader.o xml_relax_ng.o xml_sax_parser.o xml_sax_parser_context.o xml_sax_push_parser.o xml_schema.o xml_syntax_error.o xml_text.o xml_xpath_context.o xslt_stylesheet.o
 HDRS = $(srcdir)/xml_processing_instruction.h $(srcdir)/html_sax_parser_context.h $(srcdir)/xml_reader.h $(srcdir)/xml_syntax_error.h $(srcdir)/xml_io.h $(srcdir)/html_sax_push_parser.h $(srcdir)/xml_attribute_decl.h $(srcdir)/xml_sax_parser_context.h $(srcdir)/xml_xpath_context.h $(srcdir)/xml_attr.h $(srcdir)/html_element_description.h $(srcdir)/xml_element_decl.h $(srcdir)/html_entity_lookup.h $(srcdir)/xml_document.h $(srcdir)/xml_dtd.h $(srcdir)/xml_schema.h $(srcdir)/xml_node.h $(srcdir)/html_document.h $(srcdir)/xml_element_content.h $(srcdir)/xml_node_set.h $(srcdir)/xml_entity_reference.h $(srcdir)/xml_sax_parser.h $(srcdir)/xml_document_fragment.h $(srcdir)/xml_relax_ng.h $(srcdir)/xml_libxml2_hacks.h $(srcdir)/xml_comment.h $(srcdir)/xml_text.h $(srcdir)/xml_sax_push_parser.h $(srcdir)/xml_entity_decl.h $(srcdir)/xslt_stylesheet.h $(srcdir)/xml_cdata.h $(srcdir)/nokogiri.h $(srcdir)/xml_namespace.h $(srcdir)/xml_encoding_handler.h
-LOCAL_HDRS = 
+LOCAL_HDRS =
 TARGET = nokogiri
 TARGET_NAME = nokogiri
 TARGET_ENTRY = Init_$(TARGET_NAME)
 DLLIB = $(TARGET).so
-EXTSTATIC = 
-STATIC_LIB = 
+EXTSTATIC =
+STATIC_LIB =
 
 TIMESTAMP_DIR = .
 BINDIR        = $(bindir)
@@ -163,7 +158,7 @@ HDRDIR        = $(rubyhdrdir)/ruby$(target_prefix)
 ARCHHDRDIR    = $(rubyhdrdir)/$(arch)/ruby$(target_prefix)
 TARGET_SO_DIR =
 TARGET_SO     = $(TARGET_SO_DIR)$(DLLIB)
-CLEANLIBS     = $(TARGET_SO) 
+CLEANLIBS     = $(TARGET_SO)
 CLEANOBJS     = *.o  *.bak
 
 all:    $(DLLIB)

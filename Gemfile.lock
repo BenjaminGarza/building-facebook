@@ -91,10 +91,7 @@ GEM
     ffi (1.11.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-<<<<<<< HEAD
-=======
     gravtastic (3.2.6)
->>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
     hashie (3.6.0)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
@@ -130,11 +127,6 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
-<<<<<<< HEAD
-    omniauth (1.9.0)
-      hashie (>= 3.4.6, < 3.7.0)
-      rack (>= 1.6.2, < 3)
-=======
     oauth2 (1.4.2)
       faraday (>= 0.8, < 2.0)
       jwt (>= 1.0, < 3.0)
@@ -149,7 +141,6 @@ GEM
     omniauth-oauth2 (1.6.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
->>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
     orm_adapter (0.5.0)
     parallel (1.18.0)
     parser (2.6.5.0)
@@ -287,21 +278,14 @@ DEPENDENCIES
   capybara
   database_cleaner
   devise (~> 4.7, >= 4.7.1)
-<<<<<<< HEAD
-  factory_girl_rails
-=======
   factory_bot (~> 4.8, >= 4.8.2)
   gravtastic
->>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
   jbuilder (~> 2.7)
   jquery (~> 0.0.1)
   jquery-rails (~> 4.3, >= 4.3.1)
   listen (>= 3.0.5, < 3.2)
   omniauth (~> 1.9)
-<<<<<<< HEAD
-=======
   omniauth-facebook
->>>>>>> a0bcf42f11a51188740e4f7a278c50660d453b6d
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 6.0.0)
