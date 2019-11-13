@@ -1,0 +1,13 @@
+current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/json-2.2.0/ext/json
+/home/hector/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/hector/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20191113-10321-11brfpl.rb extconf.rb
+creating Makefile
+
+current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/json-2.2.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/json-2.2.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for 'all'.
+
+current directory: /home/hector/github/building-facebook/vendor/cache/ruby/2.6.0/gems/json-2.2.0/ext/json
+make "DESTDIR=" install

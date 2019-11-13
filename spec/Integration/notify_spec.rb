@@ -16,5 +16,6 @@ RSpec.describe 'likepost', type: :feature do
     fill_in('user_email', with: 'tom@gmail.com')
     fill_in('user_password', with: '123456')
     click_button('commit')
+    expect(page).to have_content('Friend requests')
   end
 end
