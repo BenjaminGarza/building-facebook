@@ -118,6 +118,7 @@ hr {
 		}
 		.p-post {
 			margin: 5px 0;
+			overflow-wrap: break-word;
 			border-radius: 15px;
 			border: solid 1px #002a8c;
 			padding: 10px;
@@ -129,6 +130,7 @@ hr {
 		.comments {
 			float: right;
 			margin: 5px 0;
+			overflow-wrap: break-word;
 			border-radius: 15px;
 			border: solid 1px black;
 			padding: 10px;

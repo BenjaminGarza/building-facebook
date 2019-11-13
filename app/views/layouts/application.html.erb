@@ -11,12 +11,18 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
-
     <script type="text/javascript">
+      $.ajax({
+        type: "POST",
+        url: "/notify",
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){
+          $("#notification_count").html(data.notifications);
+          $("#notification_count2").html(data.notifications);
+        },
+        error: function(jqXHR, textStatus, errorThrown){}
+      });
+
       var a = document.getElementById("changeIcon");
       var nav = document.getElementById("nav-menu-show");
       var img_menu = document.getElementById("img_menu");
@@ -47,5 +53,11 @@
         });
       }, 1000);
     </script>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+
   </body>
 </html>
