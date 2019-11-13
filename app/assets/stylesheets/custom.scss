@@ -61,7 +61,7 @@ hr {
 }
 /* Post Style */
 #post-container {
-  width: 1000px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
 	background: white;
@@ -127,11 +127,11 @@ hr {
 			}
 		}
 		.comments {
+			float: right;
 			margin: 5px 0;
 			border-radius: 15px;
 			border: solid 1px black;
 			padding: 10px;
-		  margin-left: 30px;
 			background: #e8e8e8
 		}
 		.comment {
