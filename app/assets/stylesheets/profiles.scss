@@ -1,0 +1,98 @@
+// Place all the styles related to the profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.h1{
+  font-size: 200%;
+}
+.friends-font{
+  display: inline-block;
+  a{
+    font-size: 150%;
+    text-decoration: none;
+    color: blue;
+  }
+}
+.friend-div{
+  border: 1px solid lightgrey;
+  padding: 5px;
+  width: 110px;
+}
+.gravatar-container{
+  padding: 15px;
+  width: 80px;
+}
+
+.body{
+  display: grid;
+  grid-row-gap: 15px;
+  aside{
+    margin-top: 30px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    #friends-title{
+      width: 100%;
+    }
+    article{
+      section{
+        a{
+          text-decoration: none;
+          color: blue;
+        }
+      }
+    }
+  }
+  .all-friends{
+    padding: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    }
+  .main{
+    margin-top: 14px;
+    grid-column-start: 4;
+    grid-column-end: 11;
+    display: flex;
+     div{
+      width: 100%;
+      article{
+        border: .5px solid lightgray;
+        padding: 30px;
+        div{
+          padding-left: 0px;
+        }
+      }
+     }
+  }
+}
+
+.comments{
+  width: 93.5%;
+}
+.name-gravitar{
+  display: flex;
+  padding: 15px;
+  div{
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    h1{
+      padding: 8%;
+    }
+  }
+}
+.all-users-title{
+  margin: 40px;
+  font-size: 200%;
+}
+
+.find-friends{
+  padding-top: 15px;
+  a{
+    text-decoration: none;
+    color: blue;
+    font-size: 175%;
+  }
+}
+.friend-requests-title{
+  padding-bottom: 10px;
+  font-size: 200%;
+}

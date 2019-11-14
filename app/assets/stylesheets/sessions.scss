@@ -1,0 +1,77 @@
+.log-in-main{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #81fffb;
+}
+.log-in-article{
+  align-self: center;
+  background-color: #81ff8c;
+  padding: 1%;
+  border-radius: 8%;
+}
+.log-in-button{
+  input{
+    
+    border-radius: 10%;
+    width: 40%;
+    padding: 2px;
+    margin: 10px;
+  }
+}
+.devise-links{
+  text-decoration: none;
+  padding: 8px;
+  a{
+    text-decoration: none;
+    
+    font-weight: bold;
+  }
+}
+.remember-check{
+  border: 5px black;
+}
+.messages{
+  padding: 10px;
+}
+.field{
+  padding: 7.5px;
+}
+.error-style{
+  form{
+    div{
+      h2{
+        max-width: 280px;
+        font-weight: 600;
+      }
+      ul{
+        padding: 10px;
+      }
+      
+    }
+ 
+  }
+  
+}
+.reset-button{
+  border-radius: 10%;
+    padding: 2px;
+
+    :hover{
+      background-color: #81ff8c;
+    }
+}
+.sign-up-button{
+  display: flex;
+  justify-content: left;
+  :hover{
+    background-color: #81ff8c;
+  }
+  input{
+   
+    width: 90%;
+    margin: 5px;
+  }
+}

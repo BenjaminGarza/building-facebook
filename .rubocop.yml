@@ -2,7 +2,9 @@ AllCops:
   Exclude:
     - "bin/*"
     - "db/**/*"
+    - "vendor/cache/**/*"
     - "config/**/*"
+    - "vendor/cache/**/*"
     - "Guardfile"
     - "Rakefile"
   DisplayCopNames: true
