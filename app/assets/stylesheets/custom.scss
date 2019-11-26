@@ -27,7 +27,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background: #f0f0f0;
+	background: #97addb;
 }
 ol, ul {
 	list-style: none;
@@ -64,7 +64,6 @@ hr {
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
-	background: white;
 	margin-top: 40px;
 }
 .error-content {
@@ -103,8 +102,12 @@ hr {
     }
   }
 	.posted {
-		width: 100%;
 		margin: 0 auto;
+		background: white;
+		margin: 20px 0;
+		padding: 15px;
+		border-radius: 10px;
+		box-shadow: 1px 1px 10px #0f1f40;
 		}
 		.link_profile {
 			font-size: 18px;
