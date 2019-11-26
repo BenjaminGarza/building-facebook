@@ -1,15 +1,17 @@
 <body class ="body">
-  <aside>
+  <div class = "post-container">
       <article>
-        <section class ="name-gravitar">
-          <div friend-div> 
-            <%= gravatar_for @user %> 
-            <h1 class ="h1"> <%= @user.name.capitalize %> </h1> 
-          </div>
-        </section>
+        <div class="gravatar-wrapper">
+          <section class ="name-gravitar">
+            <div friend-div>
+              <%= gravatar_for @user %>
+              <h1 class ="h1"> <%= @user.name.capitalize %> </h1>
+            </div>
+          </section>
+        </div>
         <section>
           <% if current_user.id == @user.id && @requests.any? %>
-          
+
             <h1 class ="friend-requests-title"> Friend requests </h1>
             <%= flash[:warning] %>
             <% @requests.each do |request| %>
@@ -21,7 +23,7 @@
             <% elsif current_user.id == @user.id%>
 
           <% elsif @sender.nil? && @receiver.nil?%>
-              <%= link_to "Add as friend", add_path(@user.id)%>        
+              <%= link_to "Add as friend", add_path(@user.id)%>
           <% elsif !@sender.nil? && !@sender.confirmed && current_user.id = @sender.id %>
             <%= link_to "Cancel request", cancel_path(@user.id) %>
           <% elsif @receiver.nil? && @sender.confirmed || @receiver.confirmed %>
@@ -33,8 +35,8 @@
         </section>
         <section class="all-friends">
           <h1 class ="h1" id="friends-title"> Friends </h1>
-          
-          
+
+
           <% @friends.each do |friend| %>
             <div class="friend-div">
             <h3 class="friends-font"> <%= link_to "#{friend.name.capitalize}", profiles_path(friend.id) %> </h3>
@@ -44,49 +46,19 @@
             <% end %>
             </div>
           <% end %>
-          
+
         </section>
         <section class="find-friends">
         <%= link_to "Find friends", find_friends_path(current_user.id) %>
         </section
       </article>
-  </aside>
-  <main class = "main">
-    <div>
-      <% @posts.each do |post|%>
-        <br>
-        <article>
-        <span><%= link_to "#{post.user.name.capitalize}", profiles_path(post.user.id), class: "link_profile"%>
-          <span class="time-post"><%= time_ago_in_words(post.created_at) %> ago.</span></span>
-      <p class="p-post"> <%= post.content %> </p>
-      <div>
-      <%= link_to image_tag("thumbs-up.svg", width: 20), likes_path(post.id) %>
-      <%= post.likes_count %>
-    </div>
-          <% if flash.any? %>
-              <ul>
-                <% flash.each do |type,obj| %>
-                  <% if type == "comment_errors" && post.id == obj[1]%>
-                  <li><%= obj[0][0] %></li>
-                  <% end %>
-                <% end %>
-              </ul>
-            <% end %>
-          <% post.comments.each do |comment| %>
-
-            <div class="comments">
-            <span><%= link_to comment.user.name, profiles_path(comment.user.id), class: "link_profile" %>
-              <%= comment.content %></span>
-          </div>
-          <% end %>
-          <br>
-          <%= form_for(@comment) do |f| %>
-            <%= f.text_area :content, class: "comment", placeholder: "Say something!" %>
-            <%= f.hidden_field :post_id, value: post.id %>
-            <%= f.submit "Comment", class: "comment-button" %>
-          <% end %>
-        </article>
-      <% end %>
-    <div>
-  </main>
+      <nav>
+        <ul class="nav-profile">
+          <li>Posts</li>
+          <li>Friends</li>
+          <li>New Friends</li>
+          <li>Friend Requests</li>
+        </ul>
+      </nav>
+      <%= render "shared/posts" %>
 </body>

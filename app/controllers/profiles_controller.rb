@@ -11,6 +11,7 @@ class ProfilesController < ApplicationController
     @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
     @posts = Post.where('user_id IN(?)', @user.id).order(:created_at)
     @comment = Comment.new
+    @post = Post.new
   end
 
   def create_friends_ids(id)
