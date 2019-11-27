@@ -5,11 +5,14 @@ class ProfilesController < ApplicationController
     @user = User.find(params[:id])
     @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
     @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
+    @posts = Post.where('user_id IN(?)', @user.id).order(created_at: 'DESC')
+    @comment = Comment.new
+    @post = Post.new
   end
 
   def posts
     @user = User.find(params[:id])
-    @posts = Post.where('user_id IN(?)', @user.id).order(:created_at)
+    @posts = Post.where('user_id IN(?)', @user.id).order(created_at: 'DESC')
     @comment = Comment.new
     @post = Post.new
   end
@@ -41,6 +44,15 @@ class ProfilesController < ApplicationController
       ids << key[:receiver_id]
     end
     ids
+  end
+
+  def add
+    @user = User.find(params[:friend_id])
+    @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
+    @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
+    Friend.create(sender_id: current_user.id, receiver_id: params[:friend_id], confirmed: false) if @sender.nil? || @receiver.nil?
+    @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
+    @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
   end
 
   def index

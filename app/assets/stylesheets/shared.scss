@@ -1,5 +1,5 @@
 /*header*/
-#notification_count {
+#notification_count, #notification_count3 {
   background: #ff1000;
   font-size: 16px;
   padding: 5px;
@@ -93,5 +93,12 @@
         }
       }
     }
+  }
+
+  .nav-profile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
   }
 }
