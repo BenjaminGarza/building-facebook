@@ -50,18 +50,10 @@ class ProfilesController < ApplicationController
     @user = User.find(params[:friend_id])
     @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
     @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
-<<<<<<< HEAD
     return unless @sender.nil? || @receiver.nil?
     Friend.create(sender_id: current_user.id, receiver_id: params[:friend_id], confirmed: false)
     @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
     @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
-=======
-    if @sender.nil? || @receiver.nil?
-      Friend.create(sender_id: current_user.id, receiver_id: params[:friend_id], confirmed: false)
-      @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
-      @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
-    end
->>>>>>> 591dd38043900d765d71eea2b7b50216f380773e
   end
 
   def index
