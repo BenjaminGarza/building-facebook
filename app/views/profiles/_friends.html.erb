@@ -1,0 +1,11 @@
+<section class="all-friends">
+  <% @friends.each do |friend| %>
+    <div class="friend-div">
+    <h3 class="friends-font"> <%= link_to "#{friend.name.capitalize}", profiles_path(friend.id) %> </h3>
+    <div class="gravatar-container"> <%= gravatar_for friend %> </div>
+    <% if current_user.id == @user.id %>
+    <h3 class="friends-font"> <%= link_to "Remove", ignore_path(friend.id) %> </h3>
+    <% end %>
+    </div>
+  <% end %>
+</section>

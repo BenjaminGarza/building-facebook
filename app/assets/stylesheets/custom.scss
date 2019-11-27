@@ -27,7 +27,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background: #f0f0f0;
+	background: #97addb;
 }
 ol, ul {
 	list-style: none;
@@ -60,11 +60,10 @@ hr {
 	background: #f0f0f0;
 }
 /* Post Style */
-#post-container {
+.post-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
-	background: white;
 	margin-top: 40px;
 }
 .error-content {
@@ -93,18 +92,26 @@ hr {
     .post-button {
 			width: 100%;
       padding: 10px;
-			background: linear-gradient(to bottom, skyblue, blue);
+			background: linear-gradient(to bottom, skyblue, #141480);
 			border-radius: 10px;
 			color: white;
 			font-size: 20px;
 			font-weight: bold;
 			border-color: inherit;
 			cursor: pointer;
+
+			&:hover {
+				background: linear-gradient(to bottom, #141480, skyblue);
+			}
     }
   }
 	.posted {
-		width: 100%;
 		margin: 0 auto;
+		background: white;
+		margin: 20px 0;
+		padding: 15px;
+		border-radius: 10px;
+		box-shadow: 1px 1px 10px #0f1f40;
 		}
 		.link_profile {
 			font-size: 18px;
@@ -150,7 +157,7 @@ hr {
 		.comment-button {
 			width: 100%;
       padding: 5px;
-			background: linear-gradient(to bottom, #82ffb6, #00a344);
+			background: linear-gradient(to bottom, #82ffb6, #20752a);
 			border-radius: 15px;
 			color: white;
 			font-size: 15px;
@@ -158,6 +165,6 @@ hr {
 			border-color: inherit;
 			cursor: pointer;
 			&:hover {
-				background: linear-gradient(to bottom, #00a344, #82ffb6);
+				background: linear-gradient(to bottom, #20752a, #82ffb6);
 			}
 		}

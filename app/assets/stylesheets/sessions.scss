@@ -4,21 +4,32 @@
   justify-content: center;
   height: 100%;
   width: 100%;
-  background-color: #81fffb;
+  background-color: #96c0ff
 }
 .log-in-article{
   align-self: center;
-  background-color: #81ff8c;
-  padding: 1%;
-  border-radius: 8%;
+  background-color: #458fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px #00317a;
 }
 .log-in-button{
+  text-align: center;
   input{
-    
+    color: white;
+    background: #00c2bb;
     border-radius: 10%;
+    border: solid 1px #52fff9;
     width: 40%;
-    padding: 2px;
+    padding: 10px;
     margin: 10px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover{
+      color: #00c2bb;
+      background: white;
+    }
   }
 }
 .devise-links{
@@ -26,8 +37,11 @@
   padding: 8px;
   a{
     text-decoration: none;
-    
     font-weight: bold;
+
+    &:hover{
+      color: white;
+    }
   }
 }
 .remember-check{
@@ -49,11 +63,11 @@
       ul{
         padding: 10px;
       }
-      
+
     }
- 
+
   }
-  
+
 }
 .reset-button{
   border-radius: 10%;
@@ -70,8 +84,20 @@
     background-color: #81ff8c;
   }
   input{
-   
     width: 90%;
     margin: 5px;
   }
+}
+
+.title-form {
+  font-weight: bolder;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+
+.field_group {
+  padding: 5px;
+  background: white;
+  border-radius: 5px;
 }

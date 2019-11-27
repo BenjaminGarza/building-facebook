@@ -1,5 +1,5 @@
 /*header*/
-#notification_count {
+#notification_count, #notification_count3 {
   background: #ff1000;
   font-size: 16px;
   padding: 5px;
@@ -37,6 +37,11 @@
         font-size: 20px;
         font-weight: bolder;
         &:hover{
+          background: linear-gradient(to bottom, #234f7d, #4397f0);
+          color: skyblue;
+          color: white;
+        }
+        &:focus {
           background: linear-gradient(to bottom, #234f7d, #4397f0);
           color: skyblue;
           color: white;
@@ -88,5 +93,12 @@
         }
       }
     }
+  }
+
+  .nav-profile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
   }
 }

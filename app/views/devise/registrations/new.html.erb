@@ -1,6 +1,6 @@
 <main class = "log-in-main">
   <article class = "log-in-article">
-  <div class ="messages"> <h2>Sign up</h2> </div>
+  <div class ="messages"> <h2 class="title-form">Sign up</h2> </div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
        <div class="error-style">
          <%= render "devise/shared/error_messages", resource: resource %>
@@ -8,12 +8,12 @@
 
       <div class="field">
         <%= f.label :name %><br />
-        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "field_group" %>
       </div>
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autocomplete: "email" %>
+        <%= f.email_field :email, autocomplete: "email", class: "field_group" %>
       </div>
 
       <div class="field">
@@ -21,15 +21,15 @@
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "field_group" %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "field_group" %>
       </div>
 
-      <div class="sign-up-button">
+      <div class="log-in-button">
         <%= f.submit "Sign up" %>
       </div>
     <% end %>

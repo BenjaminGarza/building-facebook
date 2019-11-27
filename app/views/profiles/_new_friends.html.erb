@@ -1,0 +1,12 @@
+  <div class="body">
+    <main class="all-users">
+      <article class ="all-friends">
+        <% @not_friends.each do |user| %>
+          <div class="friend-div">
+          <h3 class="users-font"> <%= link_to "#{user.name.capitalize}", profiles_path(user.id) %> </h3>
+          <div class="gravatar-container"> <%= gravatar_for user %> </div>
+          </div>
+        <% end %>
+      </article>
+    </main>
+  </div>

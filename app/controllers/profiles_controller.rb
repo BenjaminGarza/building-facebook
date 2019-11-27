@@ -1,16 +1,33 @@
 # frozen_string_literal: true
 
 class ProfilesController < ApplicationController
+  before_action :set_user, only: [:add]
   def show
+    @user = User.find(params[:id])
+    @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
+    @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
+    @posts = Post.where('user_id IN(?)', @user.id).order(created_at: 'DESC')
+    @comment = Comment.new
+    @post = Post.new
+  end
+
+  def posts
+    @user = User.find(params[:id])
+    @posts = Post.where('user_id IN(?)', @user.id).order(created_at: 'DESC')
+    @comment = Comment.new
+    @post = Post.new
+  end
+
+  def friends
+    @user = User.find(params[:id])
     @ids = create_friends_ids(params[:id])
     @friends = User.where('id IN (?)', @ids)
+  end
+
+  def requests
     @user = User.find(params[:id])
     @user_ids = Friend.select(:sender_id).where('receiver_id = ? AND confirmed = false', current_user.id)
     @requests = User.where('id in(?)', @user_ids)
-    @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
-    @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
-    @posts = Post.where('user_id IN(?)', @user.id).order(:created_at)
-    @comment = Comment.new
   end
 
   def create_friends_ids(id)
@@ -30,6 +47,16 @@ class ProfilesController < ApplicationController
     ids
   end
 
+  def add
+    @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
+    @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
+    return unless @sender.nil? || @receiver.nil?
+
+    Friend.create(sender_id: current_user.id, receiver_id: params[:friend_id], confirmed: false)
+    @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
+    @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
+  end
+
   def index
     @friends_id3 = Friend.select(:sender_id).where('(receiver_id = ?) AND confirmed = true', current_user.id)
     @friends_id4 = Friend.select(:receiver_id).where('(sender_id = ?) AND confirmed = true', current_user.id)
@@ -37,5 +64,9 @@ class ProfilesController < ApplicationController
     @ids2 << current_user.id
     @not_friends = User.where('id NOT IN (?)', @ids2)
     @not_friends = User.all if @not_friends.empty?
+  end
+
+  def set_user
+    @user = User.find(params[:friend_id])
   end
 end

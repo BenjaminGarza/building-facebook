@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .h1{
   font-size: 200%;
+  color: white;
+  font-weight: bold;
 }
 .friends-font{
   display: inline-block;
@@ -16,15 +18,17 @@
   border: 1px solid lightgrey;
   padding: 5px;
   width: 110px;
+
 }
 .gravatar-container{
   padding: 15px;
   width: 80px;
 }
-
+.gravatar {
+  border-radius: 50%;
+  border: 5px solid white;
+}
 .body{
-  display: grid;
-  grid-row-gap: 15px;
   aside{
     margin-top: 30px;
     grid-column-start: 2;
@@ -48,8 +52,6 @@
     }
   .main{
     margin-top: 14px;
-    grid-column-start: 4;
-    grid-column-end: 11;
     display: flex;
      div{
       width: 100%;
@@ -95,4 +97,67 @@
 .friend-requests-title{
   padding-bottom: 10px;
   font-size: 200%;
+}
+
+.gravatar-wrapper{
+  background-image: url("backprofile.jpg");
+  padding: 150px 80px 20px 20px;
+}
+
+.nav-profile {
+  display: flex;
+  justify-content: space-around;
+  a{
+    background: linear-gradient(to bottom, #2f4482, #11204d);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover {
+      background: linear-gradient(to bottom, #11204d, #2f4482);
+      color: #7a9cff;
+    }
+    &:focus {
+      background: linear-gradient(to bottom, white, #2f4482);
+      color: black;
+    }
+  }
+}
+
+.requests-container {
+  margin-top: 2%;
+}
+
+.margin-left{
+  margin-left: 20px;
+}
+
+.accept {
+  background: green;
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  &:hover {
+    background: white;
+    color: green;
+  }
+}
+
+.ignore {
+  background: red;
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  &:hover {
+    background: white;
+    color: red;
+  }
 }

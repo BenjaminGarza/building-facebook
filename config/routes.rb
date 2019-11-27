@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   get 'profiles/:id', to: 'profiles#show', as: 'profiles'
   get 'profiles/:id/all', to: 'profiles#index', as: 'find_friends'
+  get 'profiles/:id/friends', to: 'profiles#friends', as: 'friends'
+  get 'profiles/:id/requests', to: 'profiles#requests', as: 'requests'
+  get 'profiles/:id/posts', to: 'profiles#posts', as: 'user_posts'
+  get 'profiles/:friend_id/add', to: 'profiles#add', as: 'add_profile'
   get 'add/:friend_id', to: "friends#add", as: 'add'
 
   get 'cancel/:friend_id', to: "friends#cancel", as: 'cancel'
