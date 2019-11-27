@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "application" %>
   </head>
@@ -30,13 +32,15 @@
       change = 1;
 
       a.onclick = function() {
+
         if(change == 2){
           nav.style.display = 'none';
-          img_menu.src = "/assets/bars.svg";
+          //img_menu.src = "/assets/bars.svg";
+          img_menu.className = "glyphicon glyphicon-menu-hamburger";
           change = 1;
         }else{
           nav.style.display = 'block';
-          img_menu.src = "https://drive.google.com/open?id=1kr_55sQMpNjjdat6IQwkBusJAna-dfiW";
+          img_menu.className = "glyphicon glyphicon-remove";
           change = 2;
         }
       }

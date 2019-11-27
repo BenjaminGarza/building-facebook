@@ -8,6 +8,7 @@
 .s-nav-show {
   display: none;
   position: fixed;
+  z-index: 100;
   top: 0;
   #nav-menu-show{
     display: none;
@@ -73,6 +74,7 @@
           background: none;
           border: none;
           padding: 8px;
+          color: white;
         }
         a {
           justify-content: space-evenly;
@@ -83,7 +85,9 @@
           text-decoration: none;
           font-size: 20px;
           font-weight: bolder;
+          color: white;
           img {
+            color: white;
             fill: white;
           }
           &:hover{
@@ -99,6 +103,5 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 10px;
   }
 }
