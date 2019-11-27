@@ -100,10 +100,18 @@
 }
 
 .gravatar-wrapper{
-  background-image: url("/assets/backprofile.jpg");
   padding: 150px 80px 20px 20px;
+  position: relative;
 }
 
+.img-profile {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 .nav-profile {
   display: flex;
   justify-content: space-around;
