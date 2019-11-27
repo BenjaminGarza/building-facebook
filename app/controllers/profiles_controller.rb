@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ProfilesController < ApplicationController
+  before_action :set_user, only: [:add]
   def show
     @user = User.find(params[:id])
     @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
@@ -47,10 +48,10 @@ class ProfilesController < ApplicationController
   end
 
   def add
-    @user = User.find(params[:friend_id])
     @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
     @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
     return unless @sender.nil? || @receiver.nil?
+
     Friend.create(sender_id: current_user.id, receiver_id: params[:friend_id], confirmed: false)
     @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
     @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
@@ -63,5 +64,9 @@ class ProfilesController < ApplicationController
     @ids2 << current_user.id
     @not_friends = User.where('id NOT IN (?)', @ids2)
     @not_friends = User.all if @not_friends.empty?
+  end
+
+  def set_user
+    @user = User.find(params[:friend_id])
   end
 end
