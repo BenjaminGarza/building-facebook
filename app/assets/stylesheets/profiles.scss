@@ -24,7 +24,10 @@
   padding: 15px;
   width: 80px;
 }
-
+.gravatar {
+  border-radius: 50%;
+  border: 5px solid white;
+}
 .body{
   aside{
     margin-top: 30px;
@@ -104,16 +107,57 @@
 .nav-profile {
   display: flex;
   justify-content: space-around;
-  li{
+  a{
     background: linear-gradient(to bottom, #2f4482, #11204d);
     color: white;
     width: 100%;
     text-align: center;
     padding: 10px;
     font-weight: bold;
+    text-decoration: none;
     &:hover {
       background: linear-gradient(to bottom, #11204d, #2f4482);
       color: #7a9cff;
     }
+    &:focus {
+      background: linear-gradient(to bottom, #11204d, #2f4482);
+      color: #7a9cff;
+    }
+  }
+}
+
+.requests-container {
+  margin-top: 2%;
+}
+
+.margin-left{
+  margin-left: 20px;
+}
+
+.accept {
+  background: green;
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  &:hover {
+    background: white;
+    color: green;
+  }
+}
+
+.ignore {
+  background: red;
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  &:hover {
+    background: white;
+    color: red;
   }
 }

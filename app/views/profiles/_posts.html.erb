@@ -1,14 +1,16 @@
 <div class="post-container">
-  <%= form_for(@post) do |f|%>
-    <%= f.text_area :content, class: "post", placeholder: "Tell us!" %>
-      <% if @post.errors.any? %>
-        <ul class="error-content">
-          <% @post.errors.full_messages.each do |msg|%>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      <% end %>
-    <%= f.submit "Post", class: "post-button"%>
+  <% if @user.nil? || @user.id == current_user.id %>
+    <%= form_for(@post) do |f|%>
+      <%= f.text_area :content, class: "post", placeholder: "Tell us!" %>
+        <% if @post.errors.any? %>
+          <ul class="error-content">
+            <% @post.errors.full_messages.each do |msg|%>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      <%= f.submit "Post", class: "post-button"%>
+    <% end %>
   <% end %>
   <% @posts.each do |post|%>
     <div class="posted">

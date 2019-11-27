@@ -92,13 +92,17 @@ hr {
     .post-button {
 			width: 100%;
       padding: 10px;
-			background: linear-gradient(to bottom, skyblue, blue);
+			background: linear-gradient(to bottom, skyblue, #141480);
 			border-radius: 10px;
 			color: white;
 			font-size: 20px;
 			font-weight: bold;
 			border-color: inherit;
 			cursor: pointer;
+
+			&:hover {
+				background: linear-gradient(to bottom, #141480, skyblue);
+			}
     }
   }
 	.posted {
@@ -153,7 +157,7 @@ hr {
 		.comment-button {
 			width: 100%;
       padding: 5px;
-			background: linear-gradient(to bottom, #82ffb6, #00a344);
+			background: linear-gradient(to bottom, #82ffb6, #20752a);
 			border-radius: 15px;
 			color: white;
 			font-size: 15px;
@@ -161,6 +165,6 @@ hr {
 			border-color: inherit;
 			cursor: pointer;
 			&:hover {
-				background: linear-gradient(to bottom, #00a344, #82ffb6);
+				background: linear-gradient(to bottom, #20752a, #82ffb6);
 			}
 		}

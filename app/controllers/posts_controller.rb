@@ -5,7 +5,6 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-
     @friends_id = Friend.select(:sender_id).where('(receiver_id = ?) AND confirmed = true', current_user.id)
     @friends_id2 = Friend.select(:receiver_id).where('(sender_id = ?) AND confirmed = true', current_user.id)
     @ids = set_ids(@friends_id, @friends_id2)

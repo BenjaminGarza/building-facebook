@@ -41,6 +41,11 @@
           color: skyblue;
           color: white;
         }
+        &:focus {
+          background: linear-gradient(to bottom, #234f7d, #4397f0);
+          color: skyblue;
+          color: white;
+        }
       }
     }
   }

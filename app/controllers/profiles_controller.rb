@@ -2,16 +2,28 @@
 
 class ProfilesController < ApplicationController
   def show
-    @ids = create_friends_ids(params[:id])
-    @friends = User.where('id IN (?)', @ids)
     @user = User.find(params[:id])
-    @user_ids = Friend.select(:sender_id).where('receiver_id = ? AND confirmed = false', current_user.id)
-    @requests = User.where('id in(?)', @user_ids)
     @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
     @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
+  end
+
+  def posts
+    @user = User.find(params[:id])
     @posts = Post.where('user_id IN(?)', @user.id).order(:created_at)
     @comment = Comment.new
     @post = Post.new
+  end
+
+  def friends
+    @user = User.find(params[:id])
+    @ids = create_friends_ids(params[:id])
+    @friends = User.where('id IN (?)', @ids)
+  end
+
+  def requests
+    @user = User.find(params[:id])
+    @user_ids = Friend.select(:sender_id).where('receiver_id = ? AND confirmed = false', current_user.id)
+    @requests = User.where('id in(?)', @user_ids)
   end
 
   def create_friends_ids(id)
