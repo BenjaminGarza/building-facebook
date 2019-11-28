@@ -2,7 +2,7 @@
   <% if current_user.id == @user.id && @requests.any? %>
     <%= flash[:warning] %>
     <% @requests.each do |request| %>
-      <span class="gravatar-container"> <%= gravatar_for request %> </span>
+      <span class="gravatar-container"> <%= gravatar_for(request,"gravatar-smaller") %> </span>
       <h3 class="friends-font"> <%= link_to "#{request.name.capitalize}", profiles_path(request.id) %> </h3>
       <%= link_to "Accept", accept_path(request.id), class: "accept margin-left" %>
       <%= link_to "Ignore", ignore_path(request.id), class: "ignore" %>

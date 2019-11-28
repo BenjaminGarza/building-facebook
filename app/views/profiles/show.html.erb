@@ -25,13 +25,24 @@
           </section>
         </div>
       </article>
-      <nav>
+      <nav class="normal-resolution">
         <ul class="nav-profile">
-          <%= link_to "<li>Posts</li>".html_safe, user_posts_path(params[:id]), remote: true %>
-          <%= link_to "<li>Friends</li>".html_safe, friends_path(params[:id]), remote: true %>
+          <%= link_to "<li><span class='glyphicon glyphicon-list'></span> <div>Posts</div></li>".html_safe, user_posts_path(params[:id]), remote: true %>
+          <%= link_to "<li><span class='glyphicon glyphicon-user'></span> <div>Friends</div></li>".html_safe, friends_path(params[:id]), remote: true %>
           <% if current_user.id == @user.id %>
-            <%= link_to "<li>New friends</li>".html_safe, find_friends_path(current_user.id), remote: true %>
-            <%= link_to "<li>Friend requests <span id='notification_count3'></span></li>".html_safe, requests_path(current_user.id), remote: true %>
+            <%= link_to "<li><span class='glyphicon glyphicon-user first-glyphicon'><span class='glyphicon glyphicon-plus second-glyphicon'></span></span> <div>New friends</div></li>".html_safe, find_friends_path(current_user.id), remote: true %>
+            <%= link_to "<li><span class='glyphicon glyphicon-user first-glyphicon'><span class='glyphicon glyphicon-th-list second-glyphicon'></span></span> <div>Friend requests <span id='notification_count3'></span></div></li>".html_safe, requests_path(current_user.id), remote: true %>
+          <% end %>
+        </ul>
+      </nav>
+
+      <nav class="small-resolution">
+        <ul class="nav-profile">
+          <%= link_to "<li><span class='glyphicon glyphicon-list'></span></li>".html_safe, user_posts_path(params[:id]), remote: true %>
+          <%= link_to "<li><span class='glyphicon glyphicon-user'></span></li>".html_safe, friends_path(params[:id]), remote: true %>
+          <% if current_user.id == @user.id %>
+            <%= link_to "<li><span class='glyphicon glyphicon-user first-glyphicon'><span class='glyphicon glyphicon-plus second-glyphicon'></span></span> </li>".html_safe, find_friends_path(current_user.id), remote: true %>
+            <%= link_to "<li><span class='glyphicon glyphicon-user first-glyphicon'><span class='glyphicon glyphicon-th-list second-glyphicon'></span><span id='notification_count4'></span></span></li>".html_safe, requests_path(current_user.id), remote: true %>
           <% end %>
         </ul>
       </nav>

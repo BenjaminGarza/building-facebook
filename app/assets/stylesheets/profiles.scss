@@ -72,6 +72,7 @@
 .name-gravitar{
   display: flex;
   padding: 15px;
+
   div{
     align-items: center;
     text-align: center;
@@ -168,4 +169,17 @@
     background: white;
     color: red;
   }
+}
+
+.small-resolution {
+  display: none;
+}
+
+.first-glyphicon {
+  position: relative;
+}
+
+.second-glyphicon {
+  font-size: 8px;
+  position: absolute;
 }
