@@ -14,18 +14,6 @@
   <body>
     <%= render 'shared/header' unless current_user.nil?%>
     <script type="text/javascript">
-      $.ajax({
-        type: "POST",
-        url: "/notify",
-        dataType: 'json',
-        success: function(data, textStatus, jqXHR){
-          $("#notification_count").html(data.notifications);
-          $("#notification_count2").html(data.notifications);
-          $("#notification_count3").html(data.notifications);
-        },
-        error: function(jqXHR, textStatus, errorThrown){}
-      });
-
       let a = document.getElementById("changeIcon");
       let nav = document.getElementById("nav-menu-show");
       let img_menu = document.getElementById("img_menu");
@@ -51,8 +39,25 @@
           url: "/notify",
           dataType: 'json',
           success: function(data, textStatus, jqXHR){
-            $("#notification_count").html(data.notifications);
-            $("#notification_count2").html(data.notifications);
+            if(data.notifications > 0){
+              $("#notification_count").html(data.notifications);
+              $("#notification_count2").html(data.notifications);
+              $("#notification_count3").html(data.notifications);
+              $("#notification_count4").html(data.notifications);
+              document.getElementById("notification_count").style.background = "red"
+              document.getElementById("notification_count2").style.background = "red"
+              document.getElementById("notification_count3").style.background = "red"
+              document.getElementById("notification_count4").style.background = "red"
+            }else{
+              $("#notification_count").html("");
+              $("#notification_count2").html("");
+              $("#notification_count3").html("");
+              $("#notification_count4").html("");
+              document.getElementById("notification_count").style.background = "none"
+              document.getElementById("notification_count2").style.background = "none"
+              document.getElementById("notification_count3").style.background = "none"
+              document.getElementById("notification_count4").style.background = "none"
+            }
           },
           error: function(jqXHR, textStatus, errorThrown){}
         });

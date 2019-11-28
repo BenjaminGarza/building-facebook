@@ -1,9 +1,19 @@
 /*header*/
 #notification_count, #notification_count3 {
-  background: #ff1000;
+  background: none;
   font-size: 16px;
   padding: 5px;
   border-radius: 100px;
+}
+#notification_count4{
+  background: none;
+  font-size: 10px;
+  padding: 2px 5px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 15px;
+  position: absolute;
+  bottom: -8px;
 }
 .s-nav-show {
   display: none;
@@ -112,14 +122,15 @@
     font-size: 2.8vw;
     width: 10vw;
   }
+  .normal-resolution{
+    display: none;
+  }
+  .small-resolution{
+    display: block;
+  }
   .friends-font{
     a{
       font-size: 3vw;
     }
-  }
-  .nav-profile {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
