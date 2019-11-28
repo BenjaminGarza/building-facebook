@@ -44,7 +44,6 @@ class PostsController < ApplicationController
       @post.update(likes_count: @post.likes_count - 1)
       @like.destroy
     end
-    redirect_to request.referrer
   end
 
   private

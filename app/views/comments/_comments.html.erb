@@ -1,0 +1,30 @@
+<br>
+<span><%= link_to "#{post.user.name}", profiles_path(post.user.id), class: "link_profile"%>
+  <%= "shared a post. " %>
+  <span class="time-post"><%= time_ago_in_words(post.created_at) %> ago.</span></span>
+<div class="p-post"> <%= simple_format(post.content) %> </div>
+<div>
+  <%= link_to tag.i(class: "glyphicon glyphicon-thumbs-up"), likes_path(post.id), name: "like", remote: true %>
+  <span id="render-likes-<%= post.id %>"><%= post.likes_count %></span>
+</div>
+ <% if flash.any? %>
+      <% flash.each do |type,obj| %>
+        <% if type == "comment_errors" && post.id == obj[1]%>
+        <ul class="error-content">
+          <li><%= obj[0][0] %></li>
+        </ul>
+        <% end %>
+      <% end %>
+  <% end %>
+<% post.comments.each do |comment| %>
+  <div class="comments">
+    <span><%= link_to comment.user.name, profiles_path(comment.user.id), class: "link_profile" %>
+      <%= simple_format(comment.content) %></span>
+  </div>
+<% end %>
+<br>
+<%= form_for(@comment, remote: true) do |f| %>
+  <%= f.text_area :content, class: "comment", placeholder: "Comment your friend's post" %>
+  <%= f.hidden_field :post_id, value: post.id %>
+  <%= f.submit "Comment", class: "comment-button" %>
+<% end %>

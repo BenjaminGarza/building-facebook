@@ -23,6 +23,7 @@
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 100;
   background: linear-gradient(to bottom, #4397f0, #234f7d);
   box-shadow: 0px 1px 5px #0d3e70;
   nav {
@@ -99,6 +100,23 @@
     }
   }
 
+  .accept {
+    font-size: 2.8vw;
+    width: 10vw;
+  }
+  .gravatar-smaller{
+    width: 11vw;
+    border: 1px solid white;
+  }
+  .ignore {
+    font-size: 2.8vw;
+    width: 10vw;
+  }
+  .friends-font{
+    a{
+      font-size: 3vw;
+    }
+  }
   .nav-profile {
     flex-direction: column;
     justify-content: center;
