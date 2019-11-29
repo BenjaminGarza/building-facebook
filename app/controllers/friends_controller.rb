@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class FriendsController < ApplicationController
+  before_action :authenticate_user!
   def cancel
     @friend = Friend.where('sender_id = ? AND receiver_id = ?', current_user.id, params[:friend_id]).first
     @friend&.destroy
@@ -25,7 +26,7 @@ class FriendsController < ApplicationController
 
   def add
     friend = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, params[:friend_id]).first
-    Friend.create(sender_id: current_user.id, receiver_id: params[:friend_id], confirmed: false) if friend.nil?
+    Friend.create(sender_id: @current_user.id, receiver_id: params[:friend_id], confirmed: false) if friend.nil?
   end
 
   def remove

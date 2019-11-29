@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_user, only: [:add]
   def show
     @user = User.find(params[:id])
@@ -49,12 +50,12 @@ class ProfilesController < ApplicationController
 
   def add
     @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
-    @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
+    @receiver = Friend.where('receiver_id = ? AND sender_id = ?', @current_user.id, @user.id).first
     return unless @sender.nil? || @receiver.nil?
 
-    Friend.create(sender_id: current_user.id, receiver_id: params[:friend_id], confirmed: false)
-    @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, current_user.id).first
-    @receiver = Friend.where('receiver_id = ? AND sender_id = ?', current_user.id, @user.id).first
+    Friend.create(sender_id: @current_user.id, receiver_id: params[:friend_id], confirmed: false)
+    @sender = Friend.where('receiver_id = ? AND sender_id = ?', @user.id, @current_user.id).first
+    @receiver = Friend.where('receiver_id = ? AND sender_id = ?', @current_user.id, @user.id).first
   end
 
   def index

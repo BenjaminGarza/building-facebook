@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     @post = Post.find_by_id(params[:post_id])
     if @like.nil?
       @post.update(likes_count: @post.likes_count + 1)
-      Like.create(user_id: current_user.id, post_id: params[:post_id])
+      Like.create(user_id: @current_user.id, post_id: params[:post_id])
     else
       @post.update(likes_count: @post.likes_count - 1)
       @like.destroy
