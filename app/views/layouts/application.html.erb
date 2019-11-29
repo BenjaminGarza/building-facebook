@@ -13,6 +13,7 @@
 
   <body>
     <%= render 'shared/header' unless current_user.nil?%>
+
     <script type="text/javascript">
       let a = document.getElementById("changeIcon");
       let nav = document.getElementById("nav-menu-show");
@@ -55,8 +56,10 @@
               $("#notification_count4").html("");
               document.getElementById("notification_count").style.background = "none"
               document.getElementById("notification_count2").style.background = "none"
-              document.getElementById("notification_count3").style.background = "none"
-              document.getElementById("notification_count4").style.background = "none"
+              if(document.getElementById("notification_count3") != null){
+                document.getElementById("notification_count3").style.background = "none"
+                document.getElementById("notification_count4").style.background = "none"
+              }
             }
           },
           error: function(jqXHR, textStatus, errorThrown){}
@@ -68,6 +71,6 @@
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
-
+    
   </body>
 </html>

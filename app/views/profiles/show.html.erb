@@ -14,7 +14,7 @@
 
             <% elsif @sender.nil? && @receiver.nil?%>
                 <%= link_to "Add friend", add_profile_path(@user.id), class: "accept", remote: true %>
-            <% elsif !@sender.nil? && !@sender.confirmed && current_user.id = @sender.id %>
+            <% elsif !@sender.nil? && !@sender.confirmed %>
               <%= link_to "Cancel request", cancel_path(@user.id), class: "ignore" %>
             <% elsif @receiver.nil? && @sender.confirmed || @receiver.confirmed %>
               <%= link_to "Remove friend", remove_path(@user.id), class: "ignore" %>
