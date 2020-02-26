@@ -49,11 +49,11 @@
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
+Feel free to check the [issues page](https://github.com/BenjaminGarza/building-facebook/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
-Feel free to check the [issues page](https://github.com/BenjaminGarza/building-facebook/issues).
 
 ## 📝 License
 
