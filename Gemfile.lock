@@ -147,7 +147,7 @@ GEM
       ast (~> 2.4.0)
     pg (1.1.4)
     public_suffix (4.0.1)
-    puma (3.12.1)
+    puma (3.12.3)
     rack (2.0.8)
     rack-proxy (0.6.5)
       rack
@@ -287,7 +287,7 @@ DEPENDENCIES
   omniauth (~> 1.9)
   omniauth-facebook
   pg (>= 0.18, < 2.0)
-  puma (~> 3.11)
+  puma (~> 3.12)
   rails (~> 6.0.0)
   rspec-rails (~> 3.5)
   rspec-wait (~> 0.0.8)
