@@ -14,7 +14,7 @@
 - CSS,
 - Javascript,
 - Ruby version 2.6.4,
-- Rails version 6.0.0.
+- Ruby on Rails version 6.0.0.
 
 ## To run the project locally first clone the repo.
 
